@@ -1,0 +1,571 @@
+import { t as Button } from "./button-CoQ3ZP4A.js";
+import { t as Route$4 } from "./programs._slug-x0nnmhdj.js";
+import { useEffect, useState } from "react";
+import { HeadContent, Link, Outlet, Scripts, createFileRoute, createRootRouteWithContext, createRouter, lazyRouteComponent, useRouter } from "@tanstack/react-router";
+import { jsx, jsxs } from "react/jsx-runtime";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Instagram, Linkedin, Mail, MapPin, Menu, Phone, X, Youtube } from "lucide-react";
+//#region src/styles.css?url
+var styles_default = "/assets/styles-Th8OTkb1.css";
+//#endregion
+//#region src/lib/lovable-error-reporting.ts
+function reportLovableError(error, context = {}) {
+	if (typeof window === "undefined") return;
+	window.__lovableEvents?.captureException?.(error, {
+		source: "react_error_boundary",
+		route: window.location.pathname,
+		...context
+	}, {
+		mechanism: "react_error_boundary",
+		handled: false,
+		severity: "error"
+	});
+}
+//#endregion
+//#region src/components/Header.tsx
+var nav = [
+	{
+		to: "/",
+		label: "Home"
+	},
+	{
+		to: "/programs",
+		label: "Programs"
+	},
+	{
+		to: "/compare",
+		label: "Compare"
+	},
+	{
+		to: "/programs/all-in-one-combo",
+		label: "Combo"
+	}
+];
+function Header() {
+	const [open, setOpen] = useState(false);
+	return /* @__PURE__ */ jsxs("header", {
+		className: "sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-lg",
+		children: [/* @__PURE__ */ jsxs("div", {
+			className: "container-px mx-auto grid h-16 max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-4",
+			children: [
+				/* @__PURE__ */ jsxs(Link, {
+					to: "/",
+					className: "flex min-w-0 items-center gap-2",
+					children: [/* @__PURE__ */ jsx("div", {
+						className: "grid h-9 w-9 shrink-0 place-items-center rounded-lg gradient-navy",
+						children: /* @__PURE__ */ jsx("span", {
+							className: "text-base font-black text-white",
+							children: "M"
+						})
+					}), /* @__PURE__ */ jsxs("div", {
+						className: "min-w-0 leading-tight",
+						children: [/* @__PURE__ */ jsx("div", {
+							className: "truncate font-display text-base font-bold text-primary",
+							children: "MBA Partner"
+						}), /* @__PURE__ */ jsx("div", {
+							className: "hidden text-[10px] uppercase tracking-wider text-muted-foreground sm:block",
+							children: "India's Career Acceleration Platform"
+						})]
+					})]
+				}),
+				/* @__PURE__ */ jsx("nav", {
+					className: "hidden items-center justify-center gap-1 lg:flex",
+					children: nav.map((n) => /* @__PURE__ */ jsx(Link, {
+						to: n.to,
+						className: "rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-primary-soft hover:text-primary",
+						activeProps: { className: "text-primary bg-primary-soft" },
+						activeOptions: { exact: n.to === "/" },
+						children: n.label
+					}, n.to))
+				}),
+				/* @__PURE__ */ jsxs("div", {
+					className: "flex items-center gap-2",
+					children: [
+						/* @__PURE__ */ jsxs("a", {
+							href: "tel:+919999999999",
+							className: "hidden items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-foreground/80 hover:border-primary md:flex",
+							children: [/* @__PURE__ */ jsx(Phone, { className: "h-3.5 w-3.5" }), " Call Us"]
+						}),
+						/* @__PURE__ */ jsx(Button, {
+							asChild: true,
+							variant: "accent",
+							size: "sm",
+							className: "hidden sm:inline-flex",
+							children: /* @__PURE__ */ jsx(Link, {
+								to: "/programs",
+								children: "Enroll Now"
+							})
+						}),
+						/* @__PURE__ */ jsx("button", {
+							onClick: () => setOpen((v) => !v),
+							className: "grid h-9 w-9 place-items-center rounded-md border border-border lg:hidden",
+							"aria-label": "Toggle menu",
+							children: open ? /* @__PURE__ */ jsx(X, { className: "h-4 w-4" }) : /* @__PURE__ */ jsx(Menu, { className: "h-4 w-4" })
+						})
+					]
+				})
+			]
+		}), open && /* @__PURE__ */ jsx("div", {
+			className: "border-t border-border bg-background lg:hidden",
+			children: /* @__PURE__ */ jsxs("div", {
+				className: "container-px mx-auto flex max-w-7xl flex-col py-3",
+				children: [nav.map((n) => /* @__PURE__ */ jsx(Link, {
+					to: n.to,
+					onClick: () => setOpen(false),
+					className: "rounded-md px-3 py-2.5 text-sm font-medium text-foreground/80 hover:bg-primary-soft",
+					children: n.label
+				}, n.to)), /* @__PURE__ */ jsx(Button, {
+					asChild: true,
+					variant: "accent",
+					className: "mt-2",
+					children: /* @__PURE__ */ jsx(Link, {
+						to: "/programs",
+						onClick: () => setOpen(false),
+						children: "Enroll Now"
+					})
+				})]
+			})
+		})]
+	});
+}
+//#endregion
+//#region src/components/Footer.tsx
+function Footer() {
+	return /* @__PURE__ */ jsx("footer", {
+		className: "gradient-navy mt-24 text-white",
+		children: /* @__PURE__ */ jsxs("div", {
+			className: "container-px mx-auto max-w-7xl py-16",
+			children: [/* @__PURE__ */ jsxs("div", {
+				className: "grid gap-10 md:grid-cols-2 lg:grid-cols-4",
+				children: [
+					/* @__PURE__ */ jsxs("div", { children: [
+						/* @__PURE__ */ jsxs("div", {
+							className: "flex items-center gap-2",
+							children: [/* @__PURE__ */ jsx("div", {
+								className: "grid h-10 w-10 place-items-center rounded-lg bg-accent",
+								children: /* @__PURE__ */ jsx("span", {
+									className: "font-display text-lg font-black text-accent-foreground",
+									children: "M"
+								})
+							}), /* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("div", {
+								className: "font-display text-lg font-bold",
+								children: "MBA Partner"
+							}), /* @__PURE__ */ jsx("div", {
+								className: "text-xs text-white/60",
+								children: "India's Career Acceleration Platform"
+							})] })]
+						}),
+						/* @__PURE__ */ jsx("p", {
+							className: "mt-4 text-sm text-white/70",
+							children: "Initiative by alumni of IIMs, XLRI & SPJIMR — helping MBA students unlock top-tier careers."
+						}),
+						/* @__PURE__ */ jsxs("div", {
+							className: "mt-5 flex gap-3",
+							children: [
+								/* @__PURE__ */ jsx("a", {
+									href: "#",
+									"aria-label": "LinkedIn",
+									className: "grid h-9 w-9 place-items-center rounded-full bg-white/10 hover:bg-accent hover:text-accent-foreground",
+									children: /* @__PURE__ */ jsx(Linkedin, { className: "h-4 w-4" })
+								}),
+								/* @__PURE__ */ jsx("a", {
+									href: "#",
+									"aria-label": "Instagram",
+									className: "grid h-9 w-9 place-items-center rounded-full bg-white/10 hover:bg-accent hover:text-accent-foreground",
+									children: /* @__PURE__ */ jsx(Instagram, { className: "h-4 w-4" })
+								}),
+								/* @__PURE__ */ jsx("a", {
+									href: "#",
+									"aria-label": "YouTube",
+									className: "grid h-9 w-9 place-items-center rounded-full bg-white/10 hover:bg-accent hover:text-accent-foreground",
+									children: /* @__PURE__ */ jsx(Youtube, { className: "h-4 w-4" })
+								})
+							]
+						})
+					] }),
+					/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h4", {
+						className: "text-sm font-semibold uppercase tracking-wider text-accent",
+						children: "Programs"
+					}), /* @__PURE__ */ jsxs("ul", {
+						className: "mt-4 space-y-2 text-sm text-white/75",
+						children: [
+							/* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, {
+								to: "/programs/placement-bootcamp",
+								className: "hover:text-accent",
+								children: "Placement Bootcamp"
+							}) }),
+							/* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, {
+								to: "/programs/case-competition-accelerator",
+								className: "hover:text-accent",
+								children: "Case Competition Accelerator"
+							}) }),
+							/* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, {
+								to: "/programs/live-projects",
+								className: "hover:text-accent",
+								children: "Live Projects"
+							}) }),
+							/* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, {
+								to: "/programs/all-in-one-combo",
+								className: "hover:text-accent",
+								children: "All-In-One Combo"
+							}) })
+						]
+					})] }),
+					/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h4", {
+						className: "text-sm font-semibold uppercase tracking-wider text-accent",
+						children: "Resources"
+					}), /* @__PURE__ */ jsxs("ul", {
+						className: "mt-4 space-y-2 text-sm text-white/75",
+						children: [
+							/* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, {
+								to: "/programs",
+								className: "hover:text-accent",
+								children: "All Programs"
+							}) }),
+							/* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, {
+								to: "/compare",
+								className: "hover:text-accent",
+								children: "Compare Programs"
+							}) }),
+							/* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx("a", {
+								href: "#mentors",
+								className: "hover:text-accent",
+								children: "Mentors"
+							}) }),
+							/* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx("a", {
+								href: "#stories",
+								className: "hover:text-accent",
+								children: "Success Stories"
+							}) })
+						]
+					})] }),
+					/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h4", {
+						className: "text-sm font-semibold uppercase tracking-wider text-accent",
+						children: "Contact"
+					}), /* @__PURE__ */ jsxs("ul", {
+						className: "mt-4 space-y-3 text-sm text-white/75",
+						children: [
+							/* @__PURE__ */ jsxs("li", {
+								className: "flex items-center gap-2",
+								children: [/* @__PURE__ */ jsx(Mail, { className: "h-4 w-4 text-accent" }), " hello@mbapartner.in"]
+							}),
+							/* @__PURE__ */ jsxs("li", {
+								className: "flex items-center gap-2",
+								children: [/* @__PURE__ */ jsx(Phone, { className: "h-4 w-4 text-accent" }), " +91 99999 99999"]
+							}),
+							/* @__PURE__ */ jsxs("li", {
+								className: "flex items-start gap-2",
+								children: [/* @__PURE__ */ jsx(MapPin, { className: "mt-0.5 h-4 w-4 text-accent" }), " Bengaluru · Mumbai · Online"]
+							})
+						]
+					})] })
+				]
+			}), /* @__PURE__ */ jsxs("div", {
+				className: "mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row",
+				children: [/* @__PURE__ */ jsxs("div", { children: [
+					"© ",
+					(/* @__PURE__ */ new Date()).getFullYear(),
+					" MBA Partner. All rights reserved."
+				] }), /* @__PURE__ */ jsxs("div", {
+					className: "flex gap-4",
+					children: [
+						/* @__PURE__ */ jsx("a", {
+							href: "#",
+							className: "hover:text-white",
+							children: "Privacy"
+						}),
+						/* @__PURE__ */ jsx("a", {
+							href: "#",
+							className: "hover:text-white",
+							children: "Terms"
+						}),
+						/* @__PURE__ */ jsx("a", {
+							href: "#",
+							className: "hover:text-white",
+							children: "Refund Policy"
+						})
+					]
+				})]
+			})]
+		})
+	});
+}
+//#endregion
+//#region src/routes/__root.tsx
+function NotFoundComponent() {
+	return /* @__PURE__ */ jsx("div", {
+		className: "flex min-h-screen items-center justify-center bg-background px-4",
+		children: /* @__PURE__ */ jsxs("div", {
+			className: "max-w-md text-center",
+			children: [
+				/* @__PURE__ */ jsx("h1", {
+					className: "text-7xl font-bold text-foreground",
+					children: "404"
+				}),
+				/* @__PURE__ */ jsx("h2", {
+					className: "mt-4 text-xl font-semibold text-foreground",
+					children: "Page not found"
+				}),
+				/* @__PURE__ */ jsx("p", {
+					className: "mt-2 text-sm text-muted-foreground",
+					children: "The page you're looking for doesn't exist or has been moved."
+				}),
+				/* @__PURE__ */ jsx("div", {
+					className: "mt-6",
+					children: /* @__PURE__ */ jsx(Link, {
+						to: "/",
+						className: "inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90",
+						children: "Go home"
+					})
+				})
+			]
+		})
+	});
+}
+function ErrorComponent({ error, reset }) {
+	console.error(error);
+	const router = useRouter();
+	useEffect(() => {
+		reportLovableError(error, { boundary: "tanstack_root_error_component" });
+	}, [error]);
+	return /* @__PURE__ */ jsx("div", {
+		className: "flex min-h-screen items-center justify-center bg-background px-4",
+		children: /* @__PURE__ */ jsxs("div", {
+			className: "max-w-md text-center",
+			children: [
+				/* @__PURE__ */ jsx("h1", {
+					className: "text-xl font-semibold tracking-tight text-foreground",
+					children: "This page didn't load"
+				}),
+				/* @__PURE__ */ jsx("p", {
+					className: "mt-2 text-sm text-muted-foreground",
+					children: "Something went wrong on our end. You can try refreshing or head back home."
+				}),
+				/* @__PURE__ */ jsxs("div", {
+					className: "mt-6 flex flex-wrap justify-center gap-2",
+					children: [/* @__PURE__ */ jsx("button", {
+						onClick: () => {
+							router.invalidate();
+							reset();
+						},
+						className: "inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90",
+						children: "Try again"
+					}), /* @__PURE__ */ jsx("a", {
+						href: "/",
+						className: "inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent",
+						children: "Go home"
+					})]
+				})
+			]
+		})
+	});
+}
+var Route$3 = createRootRouteWithContext()({
+	head: () => ({
+		meta: [
+			{ charSet: "utf-8" },
+			{
+				name: "viewport",
+				content: "width=device-width, initial-scale=1"
+			},
+			{ title: "MBA Partner — India's Career Acceleration Platform for MBA Students" },
+			{
+				name: "description",
+				content: "Mentorship, live projects, case competitions and placement preparation for MBA students from IIMs, XLRI, SPJIMR, NMIMS, Symbiosis and beyond."
+			},
+			{
+				name: "author",
+				content: "MBA Partner"
+			},
+			{
+				property: "og:title",
+				content: "MBA Partner — India's Career Acceleration Platform"
+			},
+			{
+				property: "og:description",
+				content: "Live projects, case comps, mentorship & placement prep for MBA students."
+			},
+			{
+				property: "og:type",
+				content: "website"
+			},
+			{
+				name: "twitter:card",
+				content: "summary_large_image"
+			}
+		],
+		links: [
+			{
+				rel: "stylesheet",
+				href: styles_default
+			},
+			{
+				rel: "preconnect",
+				href: "https://fonts.googleapis.com"
+			},
+			{
+				rel: "preconnect",
+				href: "https://fonts.gstatic.com",
+				crossOrigin: "anonymous"
+			},
+			{
+				rel: "stylesheet",
+				href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap"
+			}
+		]
+	}),
+	shellComponent: RootShell,
+	component: RootComponent,
+	notFoundComponent: NotFoundComponent,
+	errorComponent: ErrorComponent
+});
+function RootShell({ children }) {
+	return /* @__PURE__ */ jsxs("html", {
+		lang: "en",
+		children: [/* @__PURE__ */ jsx("head", { children: /* @__PURE__ */ jsx(HeadContent, {}) }), /* @__PURE__ */ jsxs("body", { children: [children, /* @__PURE__ */ jsx(Scripts, {})] })]
+	});
+}
+function RootComponent() {
+	const { queryClient } = Route$3.useRouteContext();
+	return /* @__PURE__ */ jsxs(QueryClientProvider, {
+		client: queryClient,
+		children: [
+			/* @__PURE__ */ jsx(Header, {}),
+			/* @__PURE__ */ jsx("main", { children: /* @__PURE__ */ jsx(Outlet, {}) }),
+			/* @__PURE__ */ jsx(Footer, {})
+		]
+	});
+}
+//#endregion
+//#region src/routes/programs.tsx
+var $$splitComponentImporter$2 = () => import("./programs-tzrCvHBS.js");
+var Route$2 = createFileRoute("/programs")({
+	head: () => ({
+		meta: [
+			{ title: "Programs · MBA Partner" },
+			{
+				name: "description",
+				content: "Explore all MBA Partner programs — placement bootcamp, case competition accelerator, live projects and the all-in-one combo."
+			},
+			{
+				property: "og:title",
+				content: "Programs · MBA Partner"
+			},
+			{
+				property: "og:description",
+				content: "Outcome-led programs for MBA students."
+			},
+			{
+				property: "og:url",
+				content: "/programs"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/programs"
+		}]
+	}),
+	component: lazyRouteComponent($$splitComponentImporter$2, "component")
+});
+//#endregion
+//#region src/routes/compare.tsx
+var $$splitComponentImporter$1 = () => import("./compare-20B0qbhe.js");
+var Route$1 = createFileRoute("/compare")({
+	head: () => ({
+		meta: [
+			{ title: "Compare Programs · MBA Partner" },
+			{
+				name: "description",
+				content: "Compare placement bootcamp, case competition accelerator, live projects and all-in-one combo side by side."
+			},
+			{
+				property: "og:title",
+				content: "Compare Programs · MBA Partner"
+			},
+			{
+				property: "og:description",
+				content: "Side-by-side comparison of all MBA Partner programs."
+			},
+			{
+				property: "og:url",
+				content: "/compare"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/compare"
+		}]
+	}),
+	component: lazyRouteComponent($$splitComponentImporter$1, "component")
+});
+//#endregion
+//#region src/routes/index.tsx
+var $$splitComponentImporter = () => import("./routes-CwU56-0p.js");
+var Route = createFileRoute("/")({
+	head: () => ({
+		meta: [
+			{ title: "MBA Partner — India's Career Acceleration Platform for MBA Students" },
+			{
+				name: "description",
+				content: "Get mentored by India's top MBA talent network. Live projects, case competitions, placement preparation & career mentorship for MBA students."
+			},
+			{
+				property: "og:title",
+				content: "MBA Partner — India's Career Acceleration Platform"
+			},
+			{
+				property: "og:description",
+				content: "Live projects, case comps, mentorship & placement prep for MBA students from IIMs, XLRI, SPJIMR & more."
+			},
+			{
+				property: "og:url",
+				content: "/"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/"
+		}]
+	}),
+	component: lazyRouteComponent($$splitComponentImporter, "component")
+});
+//#endregion
+//#region src/routeTree.gen.ts
+var ProgramsRoute = Route$2.update({
+	id: "/programs",
+	path: "/programs",
+	getParentRoute: () => Route$3
+});
+var CompareRoute = Route$1.update({
+	id: "/compare",
+	path: "/compare",
+	getParentRoute: () => Route$3
+});
+var IndexRoute = Route.update({
+	id: "/",
+	path: "/",
+	getParentRoute: () => Route$3
+});
+var ProgramsRouteChildren = { ProgramsSlugRoute: Route$4.update({
+	id: "/$slug",
+	path: "/$slug",
+	getParentRoute: () => ProgramsRoute
+}) };
+var rootRouteChildren = {
+	IndexRoute,
+	CompareRoute,
+	ProgramsRoute: ProgramsRoute._addFileChildren(ProgramsRouteChildren)
+};
+var routeTree = Route$3._addFileChildren(rootRouteChildren)._addFileTypes();
+//#endregion
+//#region src/router.tsx
+var getRouter = () => {
+	return createRouter({
+		routeTree,
+		context: { queryClient: new QueryClient() },
+		scrollRestoration: true,
+		defaultPreloadStaleTime: 0
+	});
+};
+//#endregion
+export { getRouter };
