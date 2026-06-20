@@ -41,17 +41,17 @@ export function Roadmap() {
                   onClick={() => setActive(i)}
                   className={`group flex w-full items-center gap-4 rounded-xl border p-3 text-left transition-all ${
                     isActive
-                      ? "border-accent bg-primary text-white shadow-[var(--shadow-elegant)]"
-                      : "border-border bg-card hover:border-primary/40 hover:bg-primary-soft"
+                      ? "border-accent bg-accent/20 shadow-[var(--shadow-elegant)]"
+                      : "border-border bg-card hover:border-primary/40 hover:bg-primary-soft/70"
                   }`}
                 >
                   <div className={`grid h-10 w-10 shrink-0 place-items-center rounded-lg ${isActive ? "bg-accent text-accent-foreground" : "bg-primary-soft text-primary"}`}>
                     <span className="font-display text-sm font-bold">{String(i + 1).padStart(2, "0")}</span>
                   </div>
                   <div className="min-w-0 flex-1">
-                    <div className={`truncate font-display text-sm font-semibold ${isActive ? "text-white" : "text-primary"}`}>{s.title}</div>
+                    <div className={`truncate font-display text-sm font-semibold ${isActive ? "text-foreground" : "text-foreground"}`}>{s.title}</div>
                   </div>
-                  <Icon className={`h-4 w-4 shrink-0 ${isActive ? "text-accent" : "text-muted-foreground"}`} />
+                  <Icon className={`h-4 w-4 shrink-0 ${isActive ? "text-foreground" : "text-muted-foreground"}`} />
                 </button>
               </li>
             );

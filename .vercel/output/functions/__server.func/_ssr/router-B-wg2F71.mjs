@@ -2,14 +2,14 @@ import { r as __toESM } from "../_runtime.mjs";
 import { c as require_jsx_runtime, l as require_react } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { t as Button } from "./button-CoQ3ZP4A.mjs";
 import { c as HeadContent, d as Outlet, f as lazyRouteComponent, g as useRouter, h as Link, m as createRootRouteWithContext, p as createFileRoute, s as Scripts, u as createRouter } from "../_libs/@tanstack/react-router+[...].mjs";
-import { _ as Instagram, d as Phone, g as Linkedin, h as Mail, m as MapPin, n as X, p as Menu, t as Youtube } from "../_libs/lucide-react.mjs";
+import { C as Instagram, S as Linkedin, b as MapPin, h as MoonStar, n as X, p as Phone, s as SunMedium, t as Youtube, v as Menu, x as Mail } from "../_libs/lucide-react.mjs";
 import { t as Route$4 } from "./programs._slug-x0nnmhdj.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-BxnkDWab.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-B-wg2F71.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-Th8OTkb1.css";
+var styles_default = "/assets/styles-D2qwvPrr.css";
 function reportLovableError(error, context = {}) {
 	if (typeof window === "undefined") return;
 	window.__lovableEvents?.captureException?.(error, {
@@ -42,6 +42,20 @@ var nav = [
 ];
 function Header() {
 	const [open, setOpen] = (0, import_react.useState)(false);
+	const [darkMode, setDarkMode] = (0, import_react.useState)(false);
+	(0, import_react.useEffect)(() => {
+		const savedTheme = window.localStorage.getItem("theme");
+		const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+		setDarkMode(savedTheme ? savedTheme === "dark" : prefersDark);
+	}, []);
+	const toggleTheme = () => {
+		setDarkMode((current) => {
+			const next = !current;
+			document.documentElement.classList.toggle("dark", next);
+			window.localStorage.setItem("theme", next ? "dark" : "light");
+			return next;
+		});
+	};
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
 		className: "sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-lg",
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -80,6 +94,12 @@ function Header() {
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "flex items-center gap-2",
 					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							onClick: toggleTheme,
+							className: "hidden h-9 w-9 items-center justify-center rounded-md border border-border text-foreground/80 hover:bg-primary-soft md:inline-flex",
+							"aria-label": "Toggle dark mode",
+							children: darkMode ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SunMedium, { className: "h-4 w-4" }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MoonStar, { className: "h-4 w-4" })
+						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 							href: "tel:+919999999999",
 							className: "hidden items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-foreground/80 hover:border-primary md:flex",
@@ -108,21 +128,29 @@ function Header() {
 			className: "border-t border-border bg-background lg:hidden",
 			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "container-px mx-auto flex max-w-7xl flex-col py-3",
-				children: [nav.map((n) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
-					to: n.to,
-					onClick: () => setOpen(false),
-					className: "rounded-md px-3 py-2.5 text-sm font-medium text-foreground/80 hover:bg-primary-soft",
-					children: n.label
-				}, n.to)), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-					asChild: true,
-					variant: "accent",
-					className: "mt-2",
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
-						to: "/programs",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+						onClick: toggleTheme,
+						className: "mb-2 flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-primary-soft md:hidden",
+						children: [darkMode ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SunMedium, { className: "h-4 w-4" }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MoonStar, { className: "h-4 w-4" }), darkMode ? "Light mode" : "Dark mode"]
+					}),
+					nav.map((n) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+						to: n.to,
 						onClick: () => setOpen(false),
-						children: "Enroll Now"
+						className: "rounded-md px-3 py-2.5 text-sm font-medium text-foreground/80 hover:bg-primary-soft",
+						children: n.label
+					}, n.to)),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+						asChild: true,
+						variant: "accent",
+						className: "mt-2",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+							to: "/programs",
+							onClick: () => setOpen(false),
+							children: "Enroll Now"
+						})
 					})
-				})]
+				]
 			})
 		})]
 	});
@@ -415,6 +443,12 @@ var Route$3 = createRootRouteWithContext()({
 	errorComponent: ErrorComponent
 });
 function RootShell({ children }) {
+	(0, import_react.useEffect)(() => {
+		const savedTheme = window.localStorage.getItem("theme");
+		const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+		const shouldUseDark = savedTheme ? savedTheme === "dark" : prefersDark;
+		document.documentElement.classList.toggle("dark", shouldUseDark);
+	}, []);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("html", {
 		lang: "en",
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("head", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadContent, {}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", { children: [children, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})] })]
@@ -422,13 +456,16 @@ function RootShell({ children }) {
 }
 function RootComponent() {
 	const { queryClient } = Route$3.useRouteContext();
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(QueryClientProvider, {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(QueryClientProvider, {
 		client: queryClient,
-		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Header, {}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("main", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {}) }),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Footer, {})
-		]
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "page-shell",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Header, {}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("main", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {}) }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Footer, {})
+			]
+		})
 	});
 }
 var $$splitComponentImporter$2 = () => import("./programs-tzrCvHBS.mjs");
@@ -489,7 +526,7 @@ var Route$1 = createFileRoute("/compare")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-var $$splitComponentImporter = () => import("./routes-CwU56-0p.mjs");
+var $$splitComponentImporter = () => import("./routes-BM_rWtEX.mjs");
 var Route = createFileRoute("/")({
 	head: () => ({
 		meta: [

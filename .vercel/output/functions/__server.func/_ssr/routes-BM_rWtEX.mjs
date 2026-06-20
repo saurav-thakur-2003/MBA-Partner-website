@@ -3,12 +3,12 @@ import { c as require_jsx_runtime, l as require_react } from "../_libs/@radix-ui
 import { n as cn, t as Button } from "./button-CoQ3ZP4A.mjs";
 import { i as programs } from "./programs-B_OmzjFp.mjs";
 import { h as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { A as ArrowLeft, D as BookOpen, E as Briefcase, S as CircleCheck, a as TrendingUp, f as MessagesSquare, i as Trophy, k as ArrowRight, l as Quote, o as Target, r as Users, s as Star, u as Play, v as GraduationCap, x as CircleUser, y as FileText } from "../_libs/lucide-react.mjs";
+import { D as CircleUser, I as ArrowRight, L as ArrowLeft, M as Briefcase, N as BookOpen, O as CircleCheck, P as Bolt, T as FileText, _ as MessageCircleMore, a as TrendingUp, c as Star, d as Quote, f as Play, g as MessagesSquare, i as Trophy, m as PhoneCall, o as Target, r as Users, u as Send, w as GraduationCap, y as Megaphone } from "../_libs/lucide-react.mjs";
 import { t as ProgramCard } from "./ProgramCard-pEpa9Xec.mjs";
 import { t as CTASection } from "./CTASection-DpcuUs9N.mjs";
 import { n as MentorShowcase, r as SuccessStories, t as FAQ } from "./FAQ-DbcE2mp-.mjs";
 import { t as useEmblaCarousel } from "../_libs/embla-carousel-react+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CwU56-0p.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-BM_rWtEX.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var stats = [
@@ -35,21 +35,21 @@ var stats = [
 ];
 function TrustStats() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
-		className: "container-px mx-auto -mt-12 max-w-7xl",
+		className: "container-px mx-auto max-w-7xl py-6 sm:py-8",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-			className: "grid grid-cols-2 gap-3 rounded-2xl border border-border bg-card p-4 shadow-[var(--shadow-card)] sm:p-6 lg:grid-cols-4",
+			className: "grid grid-cols-1 gap-2 rounded-3xl border border-border bg-card p-3 shadow-[var(--shadow-card)] sm:grid-cols-2 sm:p-4 lg:grid-cols-4",
 			children: stats.map(({ icon: Icon, value, label }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "flex items-center gap-4 rounded-xl p-3 transition-colors hover:bg-primary-soft",
+				className: "flex items-center gap-3 rounded-2xl px-3 py-2 transition-colors hover:bg-primary-soft/70",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 					className: "grid h-12 w-12 shrink-0 place-items-center rounded-xl gradient-navy text-white",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { className: "h-5 w-5" })
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "min-w-0",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "font-display text-2xl font-bold text-primary sm:text-3xl",
+						className: "font-display text-2xl font-extrabold text-foreground sm:text-3xl",
 						children: value
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "truncate text-xs font-medium text-muted-foreground",
+						className: "truncate text-xs font-medium text-foreground/70",
 						children: label
 					})]
 				})]
@@ -131,7 +131,7 @@ function Roadmap() {
 					const isActive = i === active;
 					return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 						onClick: () => setActive(i),
-						className: `group flex w-full items-center gap-4 rounded-xl border p-3 text-left transition-all ${isActive ? "border-accent bg-primary text-white shadow-[var(--shadow-elegant)]" : "border-border bg-card hover:border-primary/40 hover:bg-primary-soft"}`,
+						className: `group flex w-full items-center gap-4 rounded-xl border p-3 text-left transition-all ${isActive ? "border-accent bg-accent/20 shadow-[var(--shadow-elegant)]" : "border-border bg-card hover:border-primary/40 hover:bg-primary-soft/70"}`,
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 								className: `grid h-10 w-10 shrink-0 place-items-center rounded-lg ${isActive ? "bg-accent text-accent-foreground" : "bg-primary-soft text-primary"}`,
@@ -143,11 +143,11 @@ function Roadmap() {
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 								className: "min-w-0 flex-1",
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-									className: `truncate font-display text-sm font-semibold ${isActive ? "text-white" : "text-primary"}`,
+									className: `truncate font-display text-sm font-semibold ${isActive ? "text-foreground" : "text-foreground"}`,
 									children: s.title
 								})
 							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { className: `h-4 w-4 shrink-0 ${isActive ? "text-accent" : "text-muted-foreground"}` })
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { className: `h-4 w-4 shrink-0 ${isActive ? "text-foreground" : "text-muted-foreground"}` })
 						]
 					}) }, s.title);
 				})
@@ -434,24 +434,68 @@ var homeFaqs = [
 		a: "Yes — 3-month no-cost EMI is available at checkout for all programs above ₹15,000."
 	}
 ];
+var bannerChips = [
+	"Limited-time mega offer",
+	"Save up to ₹40,000",
+	"50% off bundle",
+	"3-month no-cost EMI",
+	"Apply now"
+];
+function PromoBanner() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "relative overflow-hidden border-b border-[#ffcf33]/60 bg-[linear-gradient(90deg,#ff6a00_0%,#ffb000_18%,#ff7a00_45%,#ffcf33_70%,#ff8a00_100%)] text-amber-950 shadow-[0_12px_35px_-15px_rgba(255,122,0,0.95)]",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 opacity-55 [background-image:linear-gradient(110deg,transparent_0%,rgba(255,255,255,0.35)_45%,transparent_90%),radial-gradient(circle_at_20%_50%,rgba(255,255,255,0.75),transparent_18%),radial-gradient(circle_at_80%_50%,rgba(255,255,255,0.55),transparent_16%)]" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#ff6a00] to-transparent" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#ff8a00] to-transparent" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "container-px relative mx-auto max-w-7xl py-2.5 sm:py-3",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "overflow-hidden rounded-2xl border border-white/25 bg-white/10 backdrop-blur-md",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "marquee flex w-[200%] items-center gap-6 whitespace-nowrap px-4 py-2.5",
+						children: [...bannerChips, ...bannerChips].map((chip, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "inline-flex items-center gap-2 text-sm font-extrabold uppercase tracking-wide",
+							children: [index === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "grid h-7 w-7 place-items-center rounded-full bg-amber-950 text-amber-100 shadow-lg",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Megaphone, { className: "h-4 w-4" })
+							}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "grid h-7 w-7 place-items-center rounded-full bg-white/55 text-amber-950 shadow",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Bolt, { className: "h-4 w-4" })
+							}), chip === "Apply now" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+								to: "/programs/all-in-one-combo",
+								className: "rounded-full border border-white/50 bg-amber-950 px-4 py-1.5 text-white shadow-[0_8px_24px_-12px_rgba(255,255,255,0.95)] transition-transform hover:scale-[1.03] hover:bg-black",
+								children: "Apply now"
+							}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "rounded-full border border-white/40 bg-white/40 px-4 py-1.5 shadow-[0_8px_24px_-12px_rgba(255,255,255,0.95)]",
+								children: chip
+							})]
+						}, `${chip}-${index}`))
+					})
+				})
+			})
+		]
+	});
+}
 function Home() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PromoBanner, {}),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
-			className: "relative overflow-hidden bg-gradient-to-b from-primary-soft/60 to-background pt-12 pb-24 sm:pt-20",
+			className: "relative overflow-hidden bg-gradient-to-b from-primary-soft/60 to-background pt-12 pb-24 sm:pt-16",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "absolute inset-0 -z-10",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute -top-32 left-1/3 h-96 w-96 rounded-full bg-accent/10 blur-3xl" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute right-0 top-40 h-96 w-96 rounded-full bg-primary/10 blur-3xl" })]
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute -top-32 left-1/3 h-96 w-96 rounded-full bg-accent/20 blur-3xl" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute right-0 top-40 h-96 w-96 rounded-full bg-primary/15 blur-3xl" })]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "container-px mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.1fr_1fr]",
+				className: "container-px mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-[1fr_1fr] lg:items-center",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "animate-fade-up",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3 py-1.5 text-xs font-semibold text-accent-foreground",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Star, { className: "h-3.5 w-3.5 fill-accent text-accent" }), "Trusted by 1,500+ MBA students · 4.9/5 rating"]
+							className: "inline-flex items-center gap-2 rounded-full border border-[#f8f683]/70 bg-[#f8f683] px-3 py-1.5 text-xs font-extrabold text-[#111827] shadow-[0_8px_24px_-14px_rgba(248,246,131,0.9)]",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Star, { className: "h-3.5 w-3.5 fill-[#111827] text-[#111827]" }), "Trusted by 1,500+ MBA students · 4.9/5 rating"]
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h1", {
-							className: "mt-5 font-display text-4xl font-extrabold leading-[1.05] text-primary sm:text-5xl lg:text-6xl",
+							className: "mt-5 max-w-2xl font-display text-4xl font-extrabold leading-[1.05] text-primary sm:text-5xl lg:text-6xl",
 							children: [
 								"Get Mentored by India's ",
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
@@ -504,34 +548,34 @@ function Home() {
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 					className: "relative",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "relative aspect-[4/5] rounded-3xl gradient-navy p-8 shadow-[var(--shadow-elegant)] sm:aspect-[5/6]",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							className: "absolute -top-4 -left-4 rounded-2xl bg-accent px-4 py-2 text-xs font-bold text-accent-foreground shadow-lg",
-							children: "NEW BATCH · Aug 2026"
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "flex h-full flex-col justify-between text-white",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-									className: "text-[11px] uppercase tracking-widest text-accent",
-									children: "Flagship Program"
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "mt-2 font-display text-3xl font-extrabold sm:text-4xl",
-									children: [
-										"All-In-One",
-										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-										"Career OS"
-									]
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-									className: "mt-3 max-w-xs text-sm text-white/80",
-									children: "The complete stack — placement prep, case comps, live projects & 6 months of 1:1 mentorship."
-								})
-							] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "space-y-3",
+						className: "relative overflow-hidden rounded-3xl gradient-navy p-6 shadow-[var(--shadow-elegant)] lg:p-8",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_20%_20%,rgba(255,180,0,0.7),transparent_22%),radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.12),transparent_18%),radial-gradient(circle_at_50%_80%,rgba(255,180,0,0.2),transparent_18%)]" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "relative grid gap-6 text-white lg:grid-cols-[1.05fr_0.95fr] lg:items-start",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "space-y-4",
 								children: [
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "grid grid-cols-3 gap-2",
+										className: "inline-flex rounded-full bg-accent px-4 py-2 text-xs font-bold text-accent-foreground shadow-lg",
+										children: "NEW BATCH · Aug 2026"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										className: "text-[11px] uppercase tracking-[0.35em] text-accent",
+										children: "Flagship Program"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "max-w-md font-display text-3xl font-extrabold sm:text-4xl",
+										children: [
+											"All-In-One",
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+											"Career OS"
+										]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "max-w-sm text-sm leading-relaxed text-white/80",
+										children: "The complete stack — placement prep, case comps, live projects & 6 months of 1:1 mentorship."
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										className: "grid grid-cols-3 gap-2 pt-4",
 										children: [
 											{
 												v: "92%",
@@ -559,15 +603,144 @@ function Home() {
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
 										asChild: true,
 										variant: "hero",
-										className: "w-full",
+										className: "w-full sm:w-auto",
 										children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
 											to: "/programs/all-in-one-combo",
 											children: ["Enroll Now · ₹39,999 ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "h-4 w-4" })]
 										})
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "text-center text-[11px] text-white/60",
+										className: "text-[11px] text-white/60",
 										children: "3-month no-cost EMI · 7-day refund"
+									})
+								]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "space-y-4 lg:pt-2",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "rounded-[1.75rem] border border-white/15 bg-white/10 p-4 shadow-[0_18px_60px_-20px_rgba(0,0,0,0.55)] backdrop-blur-xl",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "flex items-center justify-between",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+												className: "text-[10px] font-bold uppercase tracking-[0.35em] text-accent",
+												children: "Live cohort preview"
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+												className: "inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-semibold text-white/80",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Play, { className: "h-3 w-3 fill-current" }), " Watch"]
+											})]
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+											className: "mt-3 overflow-hidden rounded-2xl bg-[linear-gradient(135deg,#111827_0%,#253c90_50%,#616ed0_100%)] p-4",
+											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+												className: "min-h-[230px] rounded-2xl border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] p-4",
+												children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+													className: "flex h-full min-h-[190px] flex-col justify-between gap-3",
+													children: [
+														/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+															className: "flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.22em] text-white/80",
+															children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(74,222,128,0.95)]" }), "Live mentoring session"]
+														}),
+														/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+															className: "max-w-[70%]",
+															children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+																className: "text-[2rem] font-black leading-[0.98] tracking-tight",
+																children: [
+																	"Case",
+																	/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+																	"Interviews"
+																]
+															}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+																className: "mt-2 text-[11px] leading-relaxed text-white/75",
+																children: "MBB-style prep with mentor feedback"
+															})]
+														}),
+														/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+															className: "grid place-items-center self-start rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold",
+															children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Play, { className: "mr-1 h-4 w-4 fill-current text-accent" }), " Play preview"]
+														})
+													]
+												})
+											})
+										})]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "rounded-[1.75rem] border border-white/15 bg-[linear-gradient(180deg,rgba(248,246,131,0.18),rgba(255,204,182,0.15),rgba(91,103,207,0.25))] p-4 shadow-[0_18px_60px_-20px_rgba(0,0,0,0.45)] backdrop-blur-xl",
+										children: [
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+												className: "text-[10px] font-bold uppercase tracking-[0.32em] text-accent",
+												children: "Offer card"
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+												className: "mt-2 rounded-2xl bg-background/25 p-3",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+													className: "text-sm font-black leading-tight text-white",
+													children: "Fast track your career"
+												}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+													className: "mt-1 text-[11px] text-white/75",
+													children: "Live projects, mentorship, placement prep"
+												})]
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+												className: "mt-3 grid grid-cols-2 gap-2",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+													className: "rounded-2xl bg-white/10 p-3 text-center",
+													children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+														className: "text-lg font-extrabold text-accent",
+														children: "50%"
+													}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+														className: "text-[10px] text-white/75",
+														children: "bundle off"
+													})]
+												}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+													className: "rounded-2xl bg-white/10 p-3 text-center",
+													children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+														className: "text-lg font-extrabold text-accent",
+														children: "24/7"
+													}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+														className: "text-[10px] text-white/75",
+														children: "support"
+													})]
+												})]
+											})
+										]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										className: "grid grid-cols-3 gap-2",
+										children: [
+											{
+												icon: Users,
+												title: "2,400+",
+												sub: "active learners"
+											},
+											{
+												icon: Trophy,
+												title: "500+",
+												sub: "wins & offers"
+											},
+											{
+												icon: Briefcase,
+												title: "200+",
+												sub: "live projects"
+											}
+										].map((item) => {
+											const Icon = item.icon;
+											return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+												className: "rounded-2xl border border-white/10 bg-white/10 p-3 text-center",
+												children: [
+													/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+														className: "mx-auto grid h-10 w-10 place-items-center rounded-xl bg-accent text-accent-foreground",
+														children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { className: "h-5 w-5" })
+													}),
+													/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+														className: "mt-2 font-display text-base font-extrabold leading-none text-white",
+														children: item.title
+													}),
+													/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+														className: "mt-1 text-[11px] text-white/70",
+														children: item.sub
+													})
+												]
+											}, item.title);
+										})
 									})
 								]
 							})]
@@ -576,7 +749,10 @@ function Home() {
 				})]
 			})]
 		}),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TrustStats, {}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			className: "-mt-8 sm:-mt-10",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TrustStats, {})
+		}),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 			className: "container-px mx-auto max-w-7xl py-20",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -614,6 +790,52 @@ function Home() {
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MentorShowcase, {}),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SuccessStories, {}),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(VideoTestimonials, {}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+			className: "container-px mx-auto max-w-7xl py-8",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-card)] sm:p-8",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "max-w-2xl",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "inline-flex items-center gap-2 rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MessageCircleMore, { className: "h-4 w-4" }), "Join the community"]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+								className: "mt-3 font-display text-3xl font-bold text-primary",
+								children: "Stay inside the loop with our WhatsApp and Telegram communities"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "mt-2 text-muted-foreground",
+								children: "Get updates on offers, live sessions, mentor AMAs, and community support."
+							})
+						]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex flex-col gap-3 sm:flex-row",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+							asChild: true,
+							variant: "hero",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+								href: "https://chat.whatsapp.com/EdyvGJbQoV9Jj6eC0slSx9?mode=hq2tcla",
+								target: "_blank",
+								rel: "noreferrer",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PhoneCall, { className: "h-4 w-4" }), "Join WhatsApp"]
+							})
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+							asChild: true,
+							variant: "outline",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+								href: "#",
+								onClick: (event) => event.preventDefault(),
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Send, { className: "h-4 w-4" }), "Telegram Channel"]
+							})
+						})]
+					})]
+				})
+			})
+		}),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FAQ, { items: homeFaqs }),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CTASection, {})
 	] });

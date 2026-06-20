@@ -111,6 +111,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("theme");
+    const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+    const shouldUseDark = savedTheme ? savedTheme === "dark" : prefersDark;
+    document.documentElement.classList.toggle("dark", shouldUseDark);
+  }, []);
+
   return (
     <html lang="en">
       <head>
@@ -129,11 +136,13 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Header />
-      <main>
+      <div className="page-shell">
+        <Header />
+        <main>
         <Outlet />
-      </main>
-      <Footer />
+        </main>
+        <Footer />
+      </div>
     </QueryClientProvider>
   );
 }

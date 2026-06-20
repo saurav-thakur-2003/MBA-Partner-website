@@ -42,44 +42,70 @@
 
 :root {
   --radius: 0.75rem;
-  /* Navy #142850 */
-  --primary: oklch(0.27 0.08 263);
-  --primary-foreground: oklch(0.99 0 0);
-  --primary-soft: oklch(0.96 0.02 260);
-  /* Amber #F59E0B */
-  --accent: oklch(0.78 0.16 72);
-  --accent-foreground: oklch(0.22 0.04 263);
+  --primary: #5a67cf;
+  --primary-foreground: #ffffff;
+  --primary-soft: #eef0ff;
 
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.18 0.03 263);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.03 263);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.03 263);
-  --secondary: oklch(0.97 0.01 260);
-  --secondary-foreground: oklch(0.27 0.08 263);
-  --muted: oklch(0.97 0.005 260);
-  --muted-foreground: oklch(0.48 0.02 263);
-  --destructive: oklch(0.6 0.22 27);
-  --destructive-foreground: oklch(0.99 0 0);
-  --success: oklch(0.62 0.14 155);
-  --success-foreground: oklch(0.99 0 0);
-  --border: oklch(0.92 0.01 260);
-  --input: oklch(0.92 0.01 260);
-  --ring: oklch(0.78 0.16 72);
-  --sidebar: oklch(0.27 0.08 263);
-  --sidebar-foreground: oklch(0.99 0 0);
-  --sidebar-primary: oklch(0.78 0.16 72);
-  --sidebar-primary-foreground: oklch(0.22 0.04 263);
-  --sidebar-accent: oklch(0.32 0.08 263);
-  --sidebar-accent-foreground: oklch(0.99 0 0);
-  --sidebar-border: oklch(0.32 0.08 263);
-  --sidebar-ring: oklch(0.78 0.16 72);
-  --chart-1: oklch(0.27 0.08 263);
-  --chart-2: oklch(0.78 0.16 72);
-  --chart-3: oklch(0.55 0.18 250);
-  --chart-4: oklch(0.62 0.14 155);
-  --chart-5: oklch(0.65 0.2 25);
+  --accent: #f8f683;
+  --accent-foreground: #111827;
+
+  --background: #fffdfb;
+  --foreground: #191f36;
+  --card: #ffffff;
+  --card-foreground: #191f36;
+  --popover: #ffffff;
+  --popover-foreground: #191f36;
+  --secondary: #f5f6ff;
+  --secondary-foreground: #4a57be;
+  --muted: #f5f7ff;
+  --muted-foreground: #5a627f;
+  --destructive: #ea5b6f;
+  --destructive-foreground: #ffffff;
+  --success: #2fb47c;
+  --success-foreground: #ffffff;
+  --border: #d9def5;
+  --input: #d9def5;
+  --ring: #616ed0;
+  --sidebar: #5a67cf;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #f8f683;
+  --sidebar-primary-foreground: #111827;
+  --sidebar-accent: #eef0ff;
+  --sidebar-accent-foreground: #191f36;
+  --sidebar-border: #d9def5;
+  --sidebar-ring: #616ed0;
+  --chart-1: #616ed0;
+  --chart-2: #f8f683;
+  --chart-3: #ffccb6;
+  --chart-4: #fbacc3;
+  --chart-5: #5a67cf;
+}
+
+.dark {
+  --primary: #c8d0ff;
+  --primary-foreground: #111827;
+  --primary-soft: #1a2347;
+
+  --accent: #f8f683;
+  --accent-foreground: #0f172a;
+
+  --background: #07111f;
+  --foreground: #eef2ff;
+  --card: #0d1830;
+  --card-foreground: #eef2ff;
+  --popover: #0d1830;
+  --popover-foreground: #eef2ff;
+  --secondary: #121d3a;
+  --secondary-foreground: #eef2ff;
+  --muted: #101b34;
+  --muted-foreground: #b4bfdc;
+  --destructive: #f97386;
+  --destructive-foreground: #ffffff;
+  --success: #45d08f;
+  --success-foreground: #06111f;
+  --border: #233152;
+  --input: #233152;
+  --ring: #f8f683;
 }
 
 @layer base {
@@ -91,6 +117,10 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
+  ::selection {
+    background: color-mix(in oklab, var(--accent) 35%, transparent);
+    color: var(--foreground);
+  }
   h1, h2, h3, h4, h5 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
@@ -100,20 +130,24 @@
 @layer utilities {
   .container-px { @apply px-5 sm:px-8 lg:px-12; }
   .gradient-navy {
-    background: linear-gradient(135deg, oklch(0.22 0.07 263) 0%, oklch(0.32 0.09 263) 100%);
+    background: linear-gradient(135deg, #0a1635 0%, #12285e 50%, #1d3473 100%);
   }
   .gradient-amber {
-    background: linear-gradient(135deg, oklch(0.82 0.16 75) 0%, oklch(0.72 0.18 60) 100%);
+    background: linear-gradient(135deg, #f8f683 0%, #ffccb6 55%, #fbacc3 100%);
   }
   .text-gradient-amber {
-    background: linear-gradient(135deg, oklch(0.82 0.16 75), oklch(0.72 0.18 50));
+    background: linear-gradient(135deg, #616ed0, #f8f683);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   .glass-dark {
-    background: color-mix(in oklab, oklch(0.22 0.07 263) 70%, transparent);
+    background: color-mix(in oklab, #07111f 72%, transparent);
     backdrop-filter: blur(12px);
+  }
+  .page-shell {
+    position: relative;
+    overflow-x: hidden;
   }
   .animate-fade-up {
     animation: fade-up 0.6s ease-out both;
@@ -123,10 +157,13 @@
     to { opacity: 1; transform: translateY(0); }
   }
   .marquee {
-    animation: marquee 30s linear infinite;
+    animation: marquee 18s linear infinite;
   }
   @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
+  }
+  .marquee-slow {
+    animation-duration: 28s;
   }
 }

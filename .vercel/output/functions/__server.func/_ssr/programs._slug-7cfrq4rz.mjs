@@ -2,7 +2,7 @@ import { c as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[..
 import { t as Button } from "./button-CoQ3ZP4A.mjs";
 import { i as programs } from "./programs-B_OmzjFp.mjs";
 import { h as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { O as Award, b as Clock, c as Sparkles, i as Trophy, k as ArrowRight, r as Users, s as Star, w as Check } from "../_libs/lucide-react.mjs";
+import { A as Check, E as Clock, F as Award, I as ArrowRight, c as Star, i as Trophy, l as Sparkles, r as Users } from "../_libs/lucide-react.mjs";
 import { t as CTASection } from "./CTASection-DpcuUs9N.mjs";
 import { t as Route } from "./programs._slug-x0nnmhdj.mjs";
 import { n as MentorShowcase, r as SuccessStories, t as FAQ } from "./FAQ-DbcE2mp-.mjs";

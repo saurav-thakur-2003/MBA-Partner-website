@@ -2,7 +2,7 @@ import { c as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[..
 import { t as Button } from "./button-CoQ3ZP4A.mjs";
 import { i as programs } from "./programs-B_OmzjFp.mjs";
 import { h as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { k as ArrowRight } from "../_libs/lucide-react.mjs";
+import { I as ArrowRight } from "../_libs/lucide-react.mjs";
 import { t as ProgramCard } from "./ProgramCard-pEpa9Xec.mjs";
 import { t as CTASection } from "./CTASection-DpcuUs9N.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/programs-tzrCvHBS.js

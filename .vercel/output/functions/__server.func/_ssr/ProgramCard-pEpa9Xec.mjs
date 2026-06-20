@@ -1,7 +1,7 @@
 import { c as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { t as Button } from "./button-CoQ3ZP4A.mjs";
 import { h as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { b as Clock, c as Sparkles, k as ArrowRight, w as Check } from "../_libs/lucide-react.mjs";
+import { A as Check, E as Clock, I as ArrowRight, l as Sparkles } from "../_libs/lucide-react.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/ProgramCard-pEpa9Xec.js
 var import_jsx_runtime = require_jsx_runtime();
 function ProgramCard({ program, compact = false }) {

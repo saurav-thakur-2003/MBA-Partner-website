@@ -2,7 +2,7 @@ import { r as __toESM } from "../_runtime.mjs";
 import { a as Trigger2, c as require_jsx_runtime, i as Root2, l as require_react, n as Header, r as Item, t as Content2 } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { n as cn } from "./button-CoQ3ZP4A.mjs";
 import { a as successStories, r as mentors, t as companyLogos } from "./programs-B_OmzjFp.mjs";
-import { C as ChevronDown, T as Building2, a as TrendingUp, v as GraduationCap } from "../_libs/lucide-react.mjs";
+import { a as TrendingUp, j as Building2, k as ChevronDown, w as GraduationCap } from "../_libs/lucide-react.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/FAQ-DbcE2mp-.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();

@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-CRv7Uix3.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-BjVH2Gzw.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "C:/Users/User/Downloads/MBA Partner/src/routes/__root.tsx",
@@ -7,46 +7,46 @@ var tsrStartManifest = () => ({ routes: {
 			"/compare",
 			"/programs"
 		],
-		preloads: ["/assets/index-BA4eIqsW.js", "/assets/button-CYHB_ZhX.js"],
+		preloads: ["/assets/index-B73CLmlz.js", "/assets/button-CYHB_ZhX.js"],
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-BA4eIqsW.js"
+			src: "/assets/index-B73CLmlz.js"
 		} }]
 	},
 	"/": {
 		filePath: "C:/Users/User/Downloads/MBA Partner/src/routes/index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/routes-CHv0VySn.js",
-			"/assets/FAQ-BmIeeOZb.js",
-			"/assets/check-CeeaNTN3.js",
-			"/assets/CTASection-CKPvaTi6.js",
-			"/assets/ProgramCard-sJFH0yrF.js"
+			"/assets/routes-O1SqSaKZ.js",
+			"/assets/FAQ-Dt9hLOIB.js",
+			"/assets/check-BLDVrudq.js",
+			"/assets/CTASection-B9ugIj8H.js",
+			"/assets/ProgramCard-DVVlObPZ.js"
 		]
 	},
 	"/compare": {
 		filePath: "C:/Users/User/Downloads/MBA Partner/src/routes/compare.tsx",
 		children: void 0,
-		preloads: ["/assets/compare-CtlTBth4.js", "/assets/check-CeeaNTN3.js"]
+		preloads: ["/assets/compare-B7ugspSt.js", "/assets/check-BLDVrudq.js"]
 	},
 	"/programs": {
 		filePath: "C:/Users/User/Downloads/MBA Partner/src/routes/programs.tsx",
 		children: ["/programs/$slug"],
 		preloads: [
-			"/assets/programs-Cof3wx2g.js",
-			"/assets/check-CeeaNTN3.js",
-			"/assets/CTASection-CKPvaTi6.js",
-			"/assets/ProgramCard-sJFH0yrF.js"
+			"/assets/programs-gVVYYQyT.js",
+			"/assets/check-BLDVrudq.js",
+			"/assets/CTASection-B9ugIj8H.js",
+			"/assets/ProgramCard-DVVlObPZ.js"
 		]
 	},
 	"/programs/$slug": {
 		filePath: "C:/Users/User/Downloads/MBA Partner/src/routes/programs.$slug.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/programs._slug-BKPxayBa.js",
-			"/assets/programs._slug-CXODlMzh.js",
-			"/assets/FAQ-BmIeeOZb.js"
+			"/assets/programs._slug-B0nUwrng.js",
+			"/assets/FAQ-Dt9hLOIB.js",
+			"/assets/programs._slug-BKPxayBa.js"
 		]
 	}
 } });

@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Menu, X, Phone, MoonStar, SunMedium } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const nav = [
@@ -12,6 +12,24 @@ const nav = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("theme");
+    const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+    const shouldUseDark = savedTheme ? savedTheme === "dark" : prefersDark;
+    setDarkMode(shouldUseDark);
+  }, []);
+
+  const toggleTheme = () => {
+    setDarkMode((current) => {
+      const next = !current;
+      document.documentElement.classList.toggle("dark", next);
+      window.localStorage.setItem("theme", next ? "dark" : "light");
+      return next;
+    });
+  };
+
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-lg">
       <div className="container-px mx-auto grid h-16 max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-4">
@@ -40,6 +58,13 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
+          <button
+            onClick={toggleTheme}
+            className="hidden h-9 w-9 items-center justify-center rounded-md border border-border text-foreground/80 hover:bg-primary-soft md:inline-flex"
+            aria-label="Toggle dark mode"
+          >
+            {darkMode ? <SunMedium className="h-4 w-4" /> : <MoonStar className="h-4 w-4" />}
+          </button>
           <a
             href="tel:+919999999999"
             className="hidden items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-foreground/80 hover:border-primary md:flex"
@@ -61,6 +86,13 @@ export function Header() {
       {open && (
         <div className="border-t border-border bg-background lg:hidden">
           <div className="container-px mx-auto flex max-w-7xl flex-col py-3">
+            <button
+              onClick={toggleTheme}
+              className="mb-2 flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-primary-soft md:hidden"
+            >
+              {darkMode ? <SunMedium className="h-4 w-4" /> : <MoonStar className="h-4 w-4" />}
+              {darkMode ? "Light mode" : "Dark mode"}
+            </button>
             {nav.map((n) => (
               <Link
                 key={n.to}
