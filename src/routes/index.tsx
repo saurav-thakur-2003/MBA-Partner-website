@@ -18,6 +18,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TrustStats } from "@/components/TrustStats";
+import { LeadForm } from "@/components/LeadForm";
+import { trust } from "@/data/content";
 import { ProgramCard } from "@/components/ProgramCard";
 import { Roadmap } from "@/components/Roadmap";
 import { MentorShowcase } from "@/components/MentorShowcase";
@@ -25,6 +27,7 @@ import { SuccessStories } from "@/components/SuccessStories";
 import { VideoTestimonials } from "@/components/VideoTestimonials";
 import { FAQ } from "@/components/FAQ";
 import { CTASection } from "@/components/CTASection";
+import { AudienceSelector } from "@/components/AudienceSelector";
 import { programs } from "@/data/programs";
 
 export const Route = createFileRoute("/")({
@@ -83,9 +86,9 @@ const bannerChips = [
 function PromoBanner() {
   return (
     <div className="relative overflow-hidden border-b border-[#ffcf33]/60 bg-[linear-gradient(90deg,#ff6a00_0%,#ffb000_18%,#ff7a00_45%,#ffcf33_70%,#ff8a00_100%)] text-amber-950 shadow-[0_12px_35px_-15px_rgba(255,122,0,0.95)]">
-      <div className="absolute inset-0 opacity-55 [background-image:linear-gradient(110deg,transparent_0%,rgba(255,255,255,0.35)_45%,transparent_90%),radial-gradient(circle_at_20%_50%,rgba(255,255,255,0.75),transparent_18%),radial-gradient(circle_at_80%_50%,rgba(255,255,255,0.55),transparent_16%)]" />
-      <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#ff6a00] to-transparent" />
-      <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#ff8a00] to-transparent" />
+      <div className="absolute inset-0 opacity-55 bg-[linear-gradient(110deg,transparent_0%,rgba(255,255,255,0.35)_45%,transparent_90%),radial-gradient(circle_at_20%_50%,rgba(255,255,255,0.75),transparent_18%),radial-gradient(circle_at_80%_50%,rgba(255,255,255,0.55),transparent_16%)]" />
+      <div className="absolute inset-y-0 left-0 w-20 bg-linear-to-r from-[#ff6a00] to-transparent" />
+      <div className="absolute inset-y-0 right-0 w-20 bg-linear-to-l from-[#ff8a00] to-transparent" />
       <div className="container-px relative mx-auto max-w-7xl py-2.5 sm:py-3">
         <div className="overflow-hidden rounded-2xl border border-white/25 bg-white/10 backdrop-blur-md">
           <div className="marquee flex w-[200%] items-center gap-6 whitespace-nowrap px-4 py-2.5">
@@ -126,7 +129,7 @@ function Home() {
     <div>
       <PromoBanner />
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-primary-soft/60 to-background pt-12 pb-24 sm:pt-16">
+      <section className="relative overflow-hidden bg-linear-to-b from-primary-soft/60 to-background pt-12 pb-24 sm:pt-16">
         <div className="absolute inset-0 -z-10">
           <div className="absolute -top-32 left-1/3 h-96 w-96 rounded-full bg-accent/20 blur-3xl" />
           <div className="absolute right-0 top-40 h-96 w-96 rounded-full bg-primary/15 blur-3xl" />
@@ -135,23 +138,27 @@ function Home() {
           <div className="animate-fade-up">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#f8f683]/70 bg-[#f8f683] px-3 py-1.5 text-xs font-extrabold text-[#111827] shadow-[0_8px_24px_-14px_rgba(248,246,131,0.9)]">
               <Star className="h-3.5 w-3.5 fill-[#111827] text-[#111827]" />
-              Trusted by 1,500+ MBA students · 4.9/5 rating
+              {trust.network} Student Network · {trust.rating}
             </div>
             <h1 className="mt-5 max-w-2xl font-display text-4xl font-extrabold leading-[1.05] text-primary sm:text-5xl lg:text-6xl">
-              Get Mentored by India's <span className="text-gradient-amber">Top MBA Talent</span> Network
+              Your MBA Journey Doesn't End With Admission.
+              <br />It Begins Here.
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Live Projects, Case Competitions, Placement Preparation and Career Mentorship — built by alumni of IIM, XLRI & SPJIMR. Now serving MBA students across India.
+              Live Projects, Case Competitions, Placements Bootcamp, Mentorship and Career Development designed by Alumni of Old IIMs.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Button asChild variant="hero" size="xl">
                 <Link to="/programs">
-                  Explore Programs <ArrowRight className="h-5 w-5" />
+                  Enroll Now <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
+              <Button onClick={() => window.open('https://chat.whatsapp.com/EdyvGJbQoV9Jj6eC0slSx9?mode=hq2tcla','_blank')} variant="outline" size="xl">
+                <PhoneCall className="h-4 w-4" /> Join WhatsApp Community
+              </Button>
               <Button asChild variant="outline" size="xl">
-                <a href="#stories">
-                  <Play className="h-4 w-4" /> Watch Success Stories
+                <a href="https://t.me/mba_partner" target="_blank" rel="noreferrer">
+                  Join Telegram Channel
                 </a>
               </Button>
             </div>
@@ -165,8 +172,8 @@ function Home() {
           </div>
 
           <div className="relative">
-            <div className="relative overflow-hidden rounded-3xl gradient-navy p-6 shadow-[var(--shadow-elegant)] lg:p-8">
-              <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_20%_20%,rgba(255,180,0,0.7),transparent_22%),radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.12),transparent_18%),radial-gradient(circle_at_50%_80%,rgba(255,180,0,0.2),transparent_18%)]" />
+            <div className="relative overflow-hidden rounded-3xl gradient-navy p-6 shadow-(--shadow-elegant) lg:p-8">
+              <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_20%_20%,rgba(255,180,0,0.7),transparent_22%),radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.12),transparent_18%),radial-gradient(circle_at_50%_80%,rgba(255,180,0,0.2),transparent_18%)]" />
               <div className="relative grid gap-6 text-white lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
                 <div className="space-y-4">
                   <div className="inline-flex rounded-full bg-accent px-4 py-2 text-xs font-bold text-accent-foreground shadow-lg">
@@ -210,8 +217,8 @@ function Home() {
                       </button>
                     </div>
                     <div className="mt-3 overflow-hidden rounded-2xl bg-[linear-gradient(135deg,#111827_0%,#253c90_50%,#616ed0_100%)] p-4">
-                      <div className="min-h-[230px] rounded-2xl border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] p-4">
-                        <div className="flex h-full min-h-[190px] flex-col justify-between gap-3">
+                      <div className="min-h-57.5 rounded-2xl border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] p-4">
+                        <div className="flex h-full min-h-47.5 flex-col justify-between gap-3">
                           <div className="flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.22em] text-white/80">
                             <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(74,222,128,0.95)]" />
                             Live mentoring session
@@ -273,6 +280,10 @@ function Home() {
         </div>
       </section>
 
+      <AudienceSelector />
+
+      <LeadForm />
+
       <div className="-mt-8 sm:-mt-10">
         <TrustStats />
       </div>
@@ -306,7 +317,7 @@ function Home() {
       <SuccessStories />
       <VideoTestimonials />
       <section className="container-px mx-auto max-w-7xl py-8">
-        <div className="rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-card)] sm:p-8">
+        <div className="rounded-3xl border border-border bg-card p-6 shadow-(--shadow-card) sm:p-8">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
@@ -326,9 +337,9 @@ function Home() {
                 </a>
               </Button>
               <Button asChild variant="outline">
-                <a href="#" onClick={(event) => event.preventDefault()}>
+                <a href="https://chat.whatsapp.com/EdyvGJbQoV9Jj6eC0slSx9?mode=hq2tcla" target="_blank" rel="noreferrer">
                   <Send className="h-4 w-4" />
-                  Telegram Channel
+                  Join Community
                 </a>
               </Button>
             </div>

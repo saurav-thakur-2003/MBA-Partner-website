@@ -1,0 +1,34 @@
+{
+  "campaigns": [
+    {
+      "name": "Hero Conversion - MBA",
+      "variant": "heroA",
+      "utm_source": "facebook",
+      "creative": "hero_mba_1.png",
+      "headline": "Your MBA Journey Begins Here",
+      "cta": "Enroll Now"
+    },
+    {
+      "name": "Hero Conversion - CAT",
+      "variant": "heroB",
+      "utm_source": "google",
+      "creative": "hero_cat_1.png",
+      "headline": "Dream MBA Converts Start Here",
+      "cta": "Start Preparation"
+    },
+    {
+      "name": "Testimonial - Placements",
+      "variant": "test1",
+      "utm_source": "instagram",
+      "creative": "test_placement_1.png",
+      "headline": "From Campus to Amazon — Aayushi's Story",
+      "cta": "Join Now"
+    }
+  ],
+  "creatives": ["hero_mba_1.png","hero_cat_1.png","hero_mba_2.png","test_placement_1.png","test_shen_1.png","test_rutuja_1.png"],
+  "utmTemplates": {
+    "facebook": "?utm_source=facebook&utm_medium=paid&utm_campaign={{campaign}}",
+    "google": "?utm_source=google&utm_medium=search&utm_campaign={{campaign}}",
+    "linkedin": "?utm_source=linkedin&utm_medium=paid&utm_campaign={{campaign}}"
+  }
+}

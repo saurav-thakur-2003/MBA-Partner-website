@@ -1,15 +1,15 @@
 import { r as __toESM } from "../_runtime.mjs";
 import { c as require_jsx_runtime, l as require_react } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { t as Button } from "./button-CoQ3ZP4A.mjs";
-import { c as HeadContent, d as Outlet, f as lazyRouteComponent, g as useRouter, h as Link, m as createRootRouteWithContext, p as createFileRoute, s as Scripts, u as createRouter } from "../_libs/@tanstack/react-router+[...].mjs";
-import { C as Instagram, S as Linkedin, b as MapPin, h as MoonStar, n as X, p as Phone, s as SunMedium, t as Youtube, v as Menu, x as Mail } from "../_libs/lucide-react.mjs";
-import { t as Route$4 } from "./programs._slug-x0nnmhdj.mjs";
+import { C as Mail, S as MapPin, T as Instagram, b as Menu, d as Send, g as MoonStar, m as Phone, n as X, s as SunMedium, t as Youtube, v as MessageCircle, w as Linkedin } from "../_libs/lucide-react.mjs";
+import { _ as useRouter, c as HeadContent, d as Outlet, f as lazyRouteComponent, h as Link, m as createRootRouteWithContext, p as createFileRoute, s as Scripts, u as createRouter } from "../_libs/@tanstack/react-router+[...].mjs";
+import { t as Route$5 } from "./programs._slug-BYJXsOJD.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-B-wg2F71.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-C-T-JKF2.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-D2qwvPrr.css";
+var styles_default = "/assets/styles-ByYFe_6S.css";
 function reportLovableError(error, context = {}) {
 	if (typeof window === "undefined") return;
 	window.__lovableEvents?.captureException?.(error, {
@@ -315,6 +315,52 @@ function Footer() {
 		})
 	});
 }
+var WHATSAPP_URL = "https://chat.whatsapp.com/EdyvGJbQoV9Jj6eC0slSx9?mode=hq2tcla";
+var TELEGRAM_URL = "https://t.me/+IrnzgXdUKqsyOTZl";
+function FloatingCommunityCTAs() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "fixed bottom-5 right-5 z-50 flex flex-col gap-3 sm:flex-row",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+			href: WHATSAPP_URL,
+			target: "_blank",
+			rel: "noreferrer",
+			"aria-label": "Join WhatsApp community",
+			className: "inline-flex items-center gap-3 rounded-[1.6rem] border border-white/20 bg-[linear-gradient(180deg,#16325f_0%,#0b1b34_100%)] px-4 py-3 text-white shadow-[0_18px_50px_-18px_rgba(7,16,35,0.95)] transition-transform hover:scale-[1.03] focus:outline-none focus:ring-2 focus:ring-[#6b7cff] focus:ring-offset-2",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+				className: "relative grid h-11 w-11 place-items-center rounded-2xl bg-accent text-accent-foreground shadow-[0_10px_24px_-10px_rgba(248,246,131,0.9)]",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MessageCircle, { className: "h-5 w-5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "absolute -right-0.5 -top-0.5 h-3 w-3 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(74,222,128,0.95)]" })]
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+				className: "flex flex-col pr-1 text-left",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+					className: "text-[10px] font-semibold uppercase tracking-[0.28em] text-accent/90",
+					children: "MBA Bot"
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+					className: "text-sm font-semibold text-white",
+					children: "WhatsApp"
+				})]
+			})]
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+			href: TELEGRAM_URL,
+			target: "_blank",
+			rel: "noreferrer",
+			"aria-label": "Join Telegram community",
+			className: "inline-flex items-center gap-3 rounded-[1.6rem] border border-white/20 bg-[linear-gradient(180deg,#2b5fd9_0%,#17306d_100%)] px-4 py-3 text-white shadow-[0_18px_50px_-18px_rgba(23,48,109,0.95)] transition-transform hover:scale-[1.03] focus:outline-none focus:ring-2 focus:ring-[#2b5fd9] focus:ring-offset-2",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+				className: "relative grid h-11 w-11 place-items-center rounded-2xl bg-white text-[#2b5fd9] shadow-[0_10px_24px_-10px_rgba(255,255,255,0.55)]",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Send, { className: "h-5 w-5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "absolute -right-0.5 -top-0.5 h-3 w-3 rounded-full bg-sky-300 shadow-[0_0_12px_rgba(125,211,252,0.95)]" })]
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+				className: "flex flex-col pr-1 text-left",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+					className: "text-[10px] font-semibold uppercase tracking-[0.28em] text-sky-100/90",
+					children: "Community"
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+					className: "text-sm font-semibold text-white",
+					children: "Telegram"
+				})]
+			})]
+		})]
+	});
+}
 function NotFoundComponent() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		className: "flex min-h-screen items-center justify-center bg-background px-4",
@@ -383,7 +429,7 @@ function ErrorComponent({ error, reset }) {
 		})
 	});
 }
-var Route$3 = createRootRouteWithContext()({
+var Route$4 = createRootRouteWithContext()({
 	head: () => ({
 		meta: [
 			{ charSet: "utf-8" },
@@ -455,7 +501,7 @@ function RootShell({ children }) {
 	});
 }
 function RootComponent() {
-	const { queryClient } = Route$3.useRouteContext();
+	const { queryClient } = Route$4.useRouteContext();
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(QueryClientProvider, {
 		client: queryClient,
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -463,13 +509,14 @@ function RootComponent() {
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Header, {}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("main", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {}) }),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Footer, {})
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Footer, {}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FloatingCommunityCTAs, {})
 			]
 		})
 	});
 }
-var $$splitComponentImporter$2 = () => import("./programs-tzrCvHBS.mjs");
-var Route$2 = createFileRoute("/programs")({
+var $$splitComponentImporter$3 = () => import("./programs-Cl6ah8RI.mjs");
+var Route$3 = createFileRoute("/programs")({
 	head: () => ({
 		meta: [
 			{ title: "Programs · MBA Partner" },
@@ -495,10 +542,10 @@ var Route$2 = createFileRoute("/programs")({
 			href: "/programs"
 		}]
 	}),
-	component: lazyRouteComponent($$splitComponentImporter$2, "component")
+	component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-var $$splitComponentImporter$1 = () => import("./compare-20B0qbhe.mjs");
-var Route$1 = createFileRoute("/compare")({
+var $$splitComponentImporter$2 = () => import("./compare-20B0qbhe.mjs");
+var Route$2 = createFileRoute("/compare")({
 	head: () => ({
 		meta: [
 			{ title: "Compare Programs · MBA Partner" },
@@ -524,9 +571,34 @@ var Route$1 = createFileRoute("/compare")({
 			href: "/compare"
 		}]
 	}),
+	component: lazyRouteComponent($$splitComponentImporter$2, "component")
+});
+var $$splitComponentImporter$1 = () => import("./cat-DW07ixZc.mjs");
+var Route$1 = createFileRoute("/cat")({
+	head: () => ({
+		meta: [
+			{ title: "CAT / OMETs Aspirant · MBA Partner" },
+			{
+				name: "description",
+				content: "CAT Foundation, Quant Mastery, VARC Mastery, LRDI Mastery and GDPI Excellence Program for aspirants aiming for top B-schools."
+			},
+			{
+				property: "og:title",
+				content: "CAT / OMETs Aspirant · MBA Partner"
+			},
+			{
+				property: "og:description",
+				content: "CAT and GDPI preparation with premium mentorship and conversion-focused support."
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/cat"
+		}]
+	}),
 	component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-var $$splitComponentImporter = () => import("./routes-BM_rWtEX.mjs");
+var $$splitComponentImporter = () => import("./routes-CzsGvzOO.mjs");
 var Route = createFileRoute("/")({
 	head: () => ({
 		meta: [
@@ -555,32 +627,38 @@ var Route = createFileRoute("/")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter, "component")
 });
-var ProgramsRoute = Route$2.update({
+var ProgramsRoute = Route$3.update({
 	id: "/programs",
 	path: "/programs",
-	getParentRoute: () => Route$3
+	getParentRoute: () => Route$4
 });
-var CompareRoute = Route$1.update({
+var CompareRoute = Route$2.update({
 	id: "/compare",
 	path: "/compare",
-	getParentRoute: () => Route$3
+	getParentRoute: () => Route$4
+});
+var CatRoute = Route$1.update({
+	id: "/cat",
+	path: "/cat",
+	getParentRoute: () => Route$4
 });
 var IndexRoute = Route.update({
 	id: "/",
 	path: "/",
-	getParentRoute: () => Route$3
+	getParentRoute: () => Route$4
 });
-var ProgramsRouteChildren = { ProgramsSlugRoute: Route$4.update({
+var ProgramsRouteChildren = { ProgramsSlugRoute: Route$5.update({
 	id: "/$slug",
 	path: "/$slug",
 	getParentRoute: () => ProgramsRoute
 }) };
 var rootRouteChildren = {
 	IndexRoute,
+	CatRoute,
 	CompareRoute,
 	ProgramsRoute: ProgramsRoute._addFileChildren(ProgramsRouteChildren)
 };
-var routeTree = Route$3._addFileChildren(rootRouteChildren)._addFileTypes();
+var routeTree = Route$4._addFileChildren(rootRouteChildren)._addFileTypes();
 var getRouter = () => {
 	return createRouter({
 		routeTree,

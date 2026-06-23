@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { FloatingCommunityIcons } from "@/components/FloatingCommunityIcons";
 
 function NotFoundComponent() {
   return (
@@ -102,6 +103,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap",
       },
+      { rel: "script", href: "https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" },
+      { rel: "script", href: "https://static.hotjar.com/c/hotjar-XXXXXX.js?sv=6" },
     ],
   }),
   shellComponent: RootShell,
@@ -112,6 +115,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const savedTheme = window.localStorage.getItem("theme");
     const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
     const shouldUseDark = savedTheme ? savedTheme === "dark" : prefersDark;
@@ -139,9 +143,10 @@ function RootComponent() {
       <div className="page-shell">
         <Header />
         <main>
-        <Outlet />
+          <Outlet />
         </main>
         <Footer />
+        <FloatingCommunityIcons />
       </div>
     </QueryClientProvider>
   );

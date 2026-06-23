@@ -1,13 +1,6 @@
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Quote, Play } from "lucide-react";
-
-const testimonials = [
-  { name: "Riya Agarwal", role: "Associate, BCG · IIM Indore '25", quote: "The mock interview process was brutal in the best way. By Day-Zero I was the calmest person in the room." },
-  { name: "Aditya Joshi", role: "Business Analyst, McKinsey · FMS '25", quote: "I went from 0 case prep to cracking 4 MBB interviews. The frameworks here are unmatched." },
-  { name: "Megha Patel", role: "Consultant, Bain · SPJIMR '25", quote: "MBA Partner felt like a sports academy for careers. Every drill, mentor and review had a purpose." },
-  { name: "Siddharth K.", role: "Kearney · IIM K '24", quote: "The case comp accelerator helped my team win 3 nationals. That single line on my CV opened MBB doors." },
-  { name: "Tanvi Desai", role: "P&G ABM · XLRI '24", quote: "Live projects gave me real B2C decisions to defend in interviews. Game changer." },
-];
+import { testimonials } from "@/data/content";
 
 export function VideoTestimonials() {
   return (
@@ -24,17 +17,21 @@ export function VideoTestimonials() {
           <CarouselContent>
             {testimonials.map((t, i) => (
               <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/3">
-                <div className="group h-full overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)]">
+                <div className="group h-full overflow-hidden rounded-2xl border border-border bg-card shadow-(--shadow-card)">
                   <div className="relative aspect-video gradient-navy">
                     <div className="absolute inset-0 grid place-items-center">
-                      <button className="grid h-16 w-16 place-items-center rounded-full bg-accent text-accent-foreground shadow-[var(--shadow-glow)] transition-transform group-hover:scale-110">
+                      <button className="grid h-16 w-16 place-items-center rounded-full bg-accent text-accent-foreground shadow-(--shadow-glow) transition-transform group-hover:scale-110">
                         <Play className="h-6 w-6 fill-current" />
                       </button>
                     </div>
                     <div className="absolute bottom-3 left-3 right-3 flex items-center gap-2 text-white">
-                      <div className="grid h-9 w-9 place-items-center rounded-full bg-accent text-xs font-bold text-accent-foreground">
-                        {t.name.split(" ").map((p) => p[0]).slice(0, 2).join("")}
-                      </div>
+                      {t.photo ? (
+                        <img src={t.photo} alt={`Photo of ${t.name}`} title={t.name} loading="lazy" className="h-9 w-9 rounded-full object-cover" />
+                      ) : (
+                        <div className="grid h-9 w-9 place-items-center rounded-full bg-accent text-xs font-bold text-accent-foreground">
+                          {t.name.split(" ").map((p) => p[0]).slice(0, 2).join("")}
+                        </div>
+                      )}
                       <div className="min-w-0">
                         <div className="truncate text-sm font-semibold">{t.name}</div>
                         <div className="truncate text-[11px] text-white/70">{t.role}</div>

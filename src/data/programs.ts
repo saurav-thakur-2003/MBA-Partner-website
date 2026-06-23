@@ -208,23 +208,31 @@ export const programs: Program[] = [
 export const getProgram = (slug: string) => programs.find((p) => p.slug === slug);
 
 export const mentors = [
-  { name: "Aarav Mehta", college: "IIM Ahmedabad", company: "McKinsey & Co.", role: "Engagement Manager" },
-  { name: "Diya Sharma", college: "IIM Bangalore", company: "Bain & Company", role: "Consultant" },
-  { name: "Rohan Verma", college: "XLRI Jamshedpur", company: "BCG", role: "Senior Associate" },
-  { name: "Ananya Iyer", college: "SPJIMR Mumbai", company: "Kearney", role: "Manager" },
-  { name: "Karan Singh", college: "IIM Calcutta", company: "Goldman Sachs", role: "VP, Strategy" },
-  { name: "Sneha Kapoor", college: "MDI Gurgaon", company: "Unilever", role: "Brand Manager" },
-  { name: "Vikram Rao", college: "IIM Lucknow", company: "Amazon", role: "Sr. PM" },
-  { name: "Pooja Nair", college: "NMIMS Mumbai", company: "PwC Strategy&", role: "Manager" },
+  { name: "Aarav Mehta", college: "IIM Ahmedabad", company: "McKinsey & Co.", role: "Engagement Manager", avatar: "https://randomuser.me/api/portraits/men/11.jpg" },
+  { name: "Diya Sharma", college: "IIM Bangalore", company: "Bain & Company", role: "Consultant", avatar: "https://randomuser.me/api/portraits/women/21.jpg" },
+  { name: "Rohan Verma", college: "XLRI Jamshedpur", company: "BCG", role: "Senior Associate", avatar: "https://randomuser.me/api/portraits/men/32.jpg" },
+  { name: "Ananya Iyer", college: "SPJIMR Mumbai", company: "Kearney", role: "Manager", avatar: "https://randomuser.me/api/portraits/women/18.jpg" },
+  { name: "Karan Singh", college: "IIM Calcutta", company: "Goldman Sachs", role: "VP, Strategy", avatar: "https://randomuser.me/api/portraits/men/45.jpg" },
+  { name: "Sneha Kapoor", college: "MDI Gurgaon", company: "Unilever", role: "Brand Manager", avatar: "https://randomuser.me/api/portraits/women/39.jpg" },
+  { name: "Vikram Rao", college: "IIM Lucknow", company: "Amazon", role: "Sr. PM", avatar: "https://randomuser.me/api/portraits/men/7.jpg" },
+  { name: "Pooja Nair", college: "NMIMS Mumbai", company: "PwC Strategy&", role: "Manager", avatar: "https://randomuser.me/api/portraits/women/52.jpg" },
 ];
 
 export const successStories = [
-  { name: "Riya Agarwal", college: "IIM Indore", company: "BCG", package: "₹38 LPA" },
-  { name: "Aditya Joshi", college: "FMS Delhi", company: "McKinsey", package: "₹42 LPA" },
-  { name: "Megha Patel", college: "SPJIMR", company: "Bain", package: "₹36 LPA" },
-  { name: "Siddharth K.", college: "IIM Kozhikode", company: "Kearney", package: "₹32 LPA" },
-  { name: "Tanvi Desai", college: "XLRI", company: "P&G", package: "₹28 LPA" },
-  { name: "Arjun N.", college: "IIM Shillong", company: "Microsoft", package: "₹34 LPA" },
+  { name: "Aayushi Gupta", college: "FMS Delhi", company: "Amazon", package: "—", avatar: "https://randomuser.me/api/portraits/women/68.jpg" },
+  { name: "Shruti Satdeve", college: "IIM Udaipur", company: "Accenture Strategy", package: "—", avatar: "https://randomuser.me/api/portraits/women/65.jpg" },
+  { name: "Megha Bhattacharya", college: "IIM Mumbai", company: "Kearney", package: "—", avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
+  { name: "Hemang Agarwal", college: "MDI Gurgaon", company: "Reliance Group", package: "—", avatar: "https://randomuser.me/api/portraits/men/34.jpg" },
+  { name: "Akula Vamsi", college: "SPJIMR", company: "JM Financial", package: "—", avatar: "https://randomuser.me/api/portraits/men/85.jpg" },
+  { name: "Shikhar Kapoor", college: "IIM Kozhikode", company: "Pine Labs", package: "—", avatar: "https://randomuser.me/api/portraits/men/12.jpg" },
+  { name: "Tanisha Sen", college: "IIM Ranchi", company: "Times of India", package: "—", avatar: "https://randomuser.me/api/portraits/women/12.jpg" },
+  { name: "Utsav Jain", college: "NMIMS Mumbai", company: "Big 4", package: "—", avatar: "https://randomuser.me/api/portraits/men/52.jpg" },
+  { name: "Riya Agarwal", college: "IIM Indore", company: "BCG", package: "₹38 LPA", avatar: "https://randomuser.me/api/portraits/women/29.jpg" },
+  { name: "Aditya Joshi", college: "FMS Delhi", company: "McKinsey", package: "₹42 LPA", avatar: "https://randomuser.me/api/portraits/men/14.jpg" },
+  { name: "Megha Patel", college: "SPJIMR", company: "Bain", package: "₹36 LPA", avatar: "https://randomuser.me/api/portraits/women/30.jpg" },
+  { name: "Siddharth K.", college: "IIM Kozhikode", company: "Kearney", package: "₹32 LPA", avatar: "https://randomuser.me/api/portraits/men/19.jpg" },
+  { name: "Tanvi Desai", college: "XLRI", company: "P&G", package: "₹28 LPA", avatar: "https://randomuser.me/api/portraits/women/22.jpg" },
+  { name: "Arjun N.", college: "IIM Shillong", company: "Microsoft", package: "₹34 LPA", avatar: "https://randomuser.me/api/portraits/men/26.jpg" },
 ];
 
 export const companyLogos = [

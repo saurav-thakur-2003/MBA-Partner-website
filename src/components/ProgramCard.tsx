@@ -1,12 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Clock, Sparkles } from "lucide-react";
 import type { Program } from "@/data/programs";
+import { pricing } from "@/data/content";
+import { pricing as pricingData } from "@/data/content";
 import { Button } from "@/components/ui/button";
 
 export function ProgramCard({ program, compact = false }: { program: Program; compact?: boolean }) {
   return (
     <article
-      className={`group relative flex flex-col rounded-2xl border bg-card p-6 shadow-[var(--shadow-card)] transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-elegant)] ${
+      className={`group relative flex flex-col rounded-2xl border bg-card p-6 shadow-(--shadow-card) transition-all hover:-translate-y-1 hover:shadow-(--shadow-elegant) ${
         program.highlight ? "border-accent ring-2 ring-accent/30" : "border-border"
       }`}
     >
@@ -18,6 +20,19 @@ export function ProgramCard({ program, compact = false }: { program: Program; co
       <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
         <Clock className="h-3.5 w-3.5" /> {program.duration}
       </div>
+
+      {program.slug === 'live-projects' && (
+        <div className="mt-4">
+          <div className="text-xs font-semibold text-muted-foreground">Domains</div>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {pricingData.liveProjectDomains?.map((d) => (
+              <span key={d} className="rounded-full bg-primary-soft px-2 py-1 text-xs font-medium text-primary">
+                {d}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
       <h3 className="mt-2 font-display text-xl font-bold text-primary">{program.name}</h3>
       <p className="mt-1 text-sm font-medium text-accent-foreground/80">{program.tagline}</p>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{program.shortDescription}</p>
@@ -36,11 +51,11 @@ export function ProgramCard({ program, compact = false }: { program: Program; co
       <div className="mt-5 flex items-end justify-between">
         <div>
           <div className="flex items-baseline gap-2">
-            <span className="font-display text-2xl font-bold text-primary">₹{program.price.toLocaleString("en-IN")}</span>
-            <span className="text-sm text-muted-foreground line-through">₹{program.originalPrice.toLocaleString("en-IN")}</span>
+            <span className="font-display text-2xl font-bold text-primary">{program.slug === 'placement-bootcamp' ? pricing.placementsBootcamp.price : `₹${program.price.toLocaleString('en-IN')}`}</span>
+            <span className="text-sm text-muted-foreground line-through">{program.slug === 'placement-bootcamp' ? pricing.placementsBootcamp.was : `₹${program.originalPrice.toLocaleString('en-IN')}`}</span>
           </div>
           <div className="text-xs font-medium text-success">
-            Save ₹{(program.originalPrice - program.price).toLocaleString("en-IN")}
+            {program.slug === 'placement-bootcamp' ? `Was ${pricing.placementsBootcamp.was}` : `Save ₹${(program.originalPrice - program.price).toLocaleString('en-IN')}`}
           </div>
         </div>
       </div>

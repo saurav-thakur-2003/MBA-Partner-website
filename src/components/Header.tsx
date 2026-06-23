@@ -15,6 +15,7 @@ export function Header() {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const savedTheme = window.localStorage.getItem("theme");
     const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
     const shouldUseDark = savedTheme ? savedTheme === "dark" : prefersDark;
@@ -25,7 +26,7 @@ export function Header() {
     setDarkMode((current) => {
       const next = !current;
       document.documentElement.classList.toggle("dark", next);
-      window.localStorage.setItem("theme", next ? "dark" : "light");
+      if (typeof window !== "undefined") window.localStorage.setItem("theme", next ? "dark" : "light");
       return next;
     });
   };

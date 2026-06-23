@@ -1,14 +1,15 @@
 import { r as __toESM } from "../_runtime.mjs";
 import { c as require_jsx_runtime, l as require_react } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { n as cn, t as Button } from "./button-CoQ3ZP4A.mjs";
-import { i as programs } from "./programs-B_OmzjFp.mjs";
-import { h as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { D as CircleUser, I as ArrowRight, L as ArrowLeft, M as Briefcase, N as BookOpen, O as CircleCheck, P as Bolt, T as FileText, _ as MessageCircleMore, a as TrendingUp, c as Star, d as Quote, f as Play, g as MessagesSquare, i as Trophy, m as PhoneCall, o as Target, r as Users, u as Send, w as GraduationCap, y as Megaphone } from "../_libs/lucide-react.mjs";
-import { t as ProgramCard } from "./ProgramCard-pEpa9Xec.mjs";
+import { A as CircleUser, B as Bolt, D as FileText, E as GraduationCap, F as ChartLine, H as Award, R as Briefcase, U as ArrowRight, W as ArrowLeft, _ as MessagesSquare, a as TrendingUp, c as Star, d as Send, f as Quote, h as PhoneCall, i as Trophy, j as CircleCheck, o as Target, p as Play, r as Users, x as Megaphone, y as MessageCircleMore, z as BookOpen } from "../_libs/lucide-react.mjs";
+import { t as FAQ } from "./FAQ-CJo438p0.mjs";
+import { g as useNavigate, h as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as CTASection } from "./CTASection-DpcuUs9N.mjs";
-import { n as MentorShowcase, r as SuccessStories, t as FAQ } from "./FAQ-DbcE2mp-.mjs";
+import { i as programs } from "./programs-B_OmzjFp.mjs";
+import { t as ProgramCard } from "./ProgramCard-pEpa9Xec.mjs";
+import { n as SuccessStories, t as MentorShowcase } from "./SuccessStories-D7Zt4jJQ.mjs";
 import { t as useEmblaCarousel } from "../_libs/embla-carousel-react+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BM_rWtEX.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-CzsGvzOO.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var stats = [
@@ -61,46 +62,88 @@ var steps = [
 	{
 		icon: CircleUser,
 		title: "Profile Building",
-		desc: "CV foundation, LinkedIn, personal brand."
+		desc: "CV foundation, LinkedIn, personal brand.",
+		points: [
+			"Profile audit",
+			"Story framing",
+			"LinkedIn optimisation"
+		]
 	},
 	{
 		icon: FileText,
 		title: "CV Review",
-		desc: "3 rounds with Tier-1 recruiters."
+		desc: "3 rounds with Tier-1 recruiters.",
+		points: [
+			"Three revision cycles",
+			"ATS-friendly structure",
+			"Mentor feedback"
+		]
 	},
 	{
 		icon: BookOpen,
 		title: "Domain Sessions",
-		desc: "Consulting, Product, Marketing, Finance."
+		desc: "Consulting, Product, Marketing, Finance.",
+		points: [
+			"Domain exposure",
+			"Role mapping",
+			"Industry basics"
+		]
 	},
 	{
 		icon: Briefcase,
 		title: "Live Projects",
-		desc: "2 real industry projects with LORs."
+		desc: "2 real industry projects with LORs.",
+		points: [
+			"Real briefs",
+			"Weekly checkpoints",
+			"LOR-worthy output"
+		]
 	},
 	{
 		icon: Trophy,
 		title: "Case Competitions",
-		desc: "Win AIRs at national comps."
+		desc: "Win AIRs at national comps.",
+		points: [
+			"Framework practice",
+			"Deck structure",
+			"Jury simulation"
+		]
 	},
 	{
 		icon: MessagesSquare,
 		title: "Mock Interviews",
-		desc: "8+ graded mocks, MBB mentors."
+		desc: "8+ graded mocks, MBB mentors.",
+		points: [
+			"Behavioral rounds",
+			"Case interviews",
+			"Feedback reports"
+		]
 	},
 	{
 		icon: Target,
 		title: "Placement Prep",
-		desc: "Day-Zero readiness, negotiation."
+		desc: "Day-Zero readiness, negotiation.",
+		points: [
+			"Offer strategy",
+			"Negotiation",
+			"Final readiness check"
+		]
 	},
 	{
 		icon: TrendingUp,
 		title: "Career Growth",
-		desc: "Lifetime alumni network."
+		desc: "Lifetime alumni network.",
+		points: [
+			"Community access",
+			"Alumni support",
+			"Long-term growth"
+		]
 	}
 ];
 function Roadmap() {
 	const [active, setActive] = (0, import_react.useState)(0);
+	const current = steps[active];
+	const ActiveIcon = current.icon;
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 		className: "container-px mx-auto max-w-7xl py-20",
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -119,37 +162,40 @@ function Roadmap() {
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "mx-auto mt-3 max-w-2xl text-muted-foreground",
-					children: "From profile foundation to your first promotion — every step engineered for the top 1% of MBA careers."
+					children: "From profile foundation to your first promotion — every step is engineered for high-conviction career outcomes."
 				})
 			]
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mt-12 grid gap-8 lg:grid-cols-[1fr_1.2fr]",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("ol", {
 				className: "space-y-2",
-				children: steps.map((s, i) => {
-					const Icon = s.icon;
-					const isActive = i === active;
+				children: steps.map((step, index) => {
+					const StepIcon = step.icon;
+					const isActive = index === active;
 					return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-						onClick: () => setActive(i),
+						onClick: () => setActive(index),
 						className: `group flex w-full items-center gap-4 rounded-xl border p-3 text-left transition-all ${isActive ? "border-accent bg-accent/20 shadow-[var(--shadow-elegant)]" : "border-border bg-card hover:border-primary/40 hover:bg-primary-soft/70"}`,
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 								className: `grid h-10 w-10 shrink-0 place-items-center rounded-lg ${isActive ? "bg-accent text-accent-foreground" : "bg-primary-soft text-primary"}`,
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 									className: "font-display text-sm font-bold",
-									children: String(i + 1).padStart(2, "0")
+									children: String(index + 1).padStart(2, "0")
 								})
 							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "min-w-0 flex-1",
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-									className: `truncate font-display text-sm font-semibold ${isActive ? "text-foreground" : "text-foreground"}`,
-									children: s.title
-								})
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "truncate font-display text-sm font-semibold text-foreground",
+									children: step.title
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "mt-0.5 text-xs text-muted-foreground",
+									children: step.desc
+								})]
 							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { className: `h-4 w-4 shrink-0 ${isActive ? "text-foreground" : "text-muted-foreground"}` })
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(StepIcon, { className: `h-4 w-4 shrink-0 ${isActive ? "text-foreground" : "text-muted-foreground"}` })
 						]
-					}) }, s.title);
+					}) }, step.title);
 				})
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "rounded-3xl border border-border gradient-navy p-8 text-white shadow-[var(--shadow-elegant)] lg:sticky lg:top-24 lg:h-fit",
@@ -158,10 +204,7 @@ function Roadmap() {
 						className: "flex items-center gap-3",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 							className: "grid h-14 w-14 place-items-center rounded-2xl bg-accent text-accent-foreground",
-							children: (() => {
-								const ActiveIcon = steps[active].icon;
-								return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ActiveIcon, { className: "h-6 w-6" });
-							})()
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ActiveIcon, { className: "h-6 w-6" })
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "text-xs uppercase tracking-wider text-accent",
 							children: [
@@ -171,20 +214,27 @@ function Roadmap() {
 							]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
 							className: "font-display text-2xl font-bold",
-							children: steps[active].title
+							children: current.title
 						})] })]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "mt-6 text-white/85",
-						children: steps[active].desc
+						children: current.desc
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "mt-6 grid gap-3 sm:grid-cols-3",
+						children: current.points.map((point) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "rounded-2xl border border-white/10 bg-white/10 p-4 text-sm text-white/90 backdrop-blur",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "mb-2 h-4 w-4 text-accent" }), point]
+						}, point))
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "mt-6 grid grid-cols-3 gap-2",
-						children: steps.map((_, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `h-1.5 rounded-full transition-all ${i <= active ? "bg-accent" : "bg-white/15"}` }, i))
+						children: steps.map((_, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `h-1.5 rounded-full transition-all ${index <= active ? "bg-accent" : "bg-white/15"}` }, index))
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "mt-6 text-sm text-white/70",
-						children: "Each step is supported by 1:1 mentorship and live cohort sessions."
+						children: "Each step is supported by 1:1 mentorship, live sessions and portfolio-driven proof."
 					})
 				]
 			})]
@@ -410,6 +460,231 @@ function VideoTestimonials() {
 				})]
 			})
 		})]
+	});
+}
+var mbaPrograms = [
+	{
+		name: "Placement Bootcamp",
+		to: "/programs/placement-bootcamp",
+		accent: "Build interview readiness"
+	},
+	{
+		name: "Live Projects",
+		to: "/programs/live-projects",
+		accent: "Strengthen your CV"
+	},
+	{
+		name: "Case Competition Accelerator",
+		to: "/programs/case-competition-accelerator",
+		accent: "Win competitions"
+	},
+	{
+		name: "All-In-One Combo",
+		to: "/programs/all-in-one-combo",
+		accent: "Best value"
+	}
+];
+var catTracks = [
+	{
+		name: "CAT Foundation Program",
+		note: "Concept building from scratch"
+	},
+	{
+		name: "Quant Mastery",
+		note: "Speed + accuracy in QA"
+	},
+	{
+		name: "VARC Mastery",
+		note: "Reading comprehension, summaries"
+	},
+	{
+		name: "LRDI Mastery",
+		note: "Set selection and logic"
+	},
+	{
+		name: "GDPI Excellence Program",
+		note: "Convert final calls"
+	}
+];
+var recommendations = [
+	{
+		prompt: "MBA Student or CAT Aspirant?",
+		icon: GraduationCap,
+		answers: ["MBA Student", "CAT / OMET Aspirant"]
+	},
+	{
+		prompt: "Looking for Placements?",
+		icon: Briefcase,
+		answers: ["Yes", "No"]
+	},
+	{
+		prompt: "Interested in Case Competitions?",
+		icon: Trophy,
+		answers: ["Yes", "No"]
+	},
+	{
+		prompt: "Need Live Projects?",
+		icon: ChartLine,
+		answers: ["Yes", "No"]
+	},
+	{
+		prompt: "Preparing for CAT?",
+		icon: BookOpen,
+		answers: ["Yes", "No"]
+	}
+];
+function AudienceSelector() {
+	const [audience, setAudience] = (0, import_react.useState)("mba");
+	const [selectedAnswers, setSelectedAnswers] = (0, import_react.useState)({});
+	const navigate = useNavigate();
+	const recommended = (0, import_react.useMemo)(() => {
+		if (selectedAnswers["mba_cat"] === "CAT / OMET Aspirant" || audience === "cat") return [
+			"CAT Foundation Program",
+			"Quant Mastery",
+			"VARC Mastery",
+			"LRDI Mastery",
+			"GDPI Excellence Program"
+		];
+		if (selectedAnswers["needs_live_projects"] === "Yes") return [
+			"Live Projects",
+			"Placement Bootcamp",
+			"All-In-One Combo"
+		];
+		if (selectedAnswers["case_comp"] === "Yes") return ["Case Competition Accelerator", "All-In-One Combo"];
+		if (selectedAnswers["placements"] === "Yes") return ["Placement Bootcamp", "All-In-One Combo"];
+		return [
+			"All-In-One Combo",
+			"Placement Bootcamp",
+			"Live Projects"
+		];
+	}, [audience, selectedAnswers]);
+	const handleAnswer = (key, value) => {
+		setSelectedAnswers((current) => ({
+			...current,
+			[key]: value
+		}));
+		if (key === "mba_cat") setAudience(value === "CAT / OMET Aspirant" ? "cat" : "mba");
+	};
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+		className: "container-px mx-auto max-w-7xl py-10 sm:py-12",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "rounded-[2rem] border border-border bg-card p-5 shadow-[var(--shadow-card)] sm:p-7",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "inline-flex rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary",
+						children: "Who Are You?"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+						className: "mt-3 font-display text-3xl font-bold text-primary sm:text-4xl",
+						children: "Premium audience selection"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "mt-2 max-w-2xl text-muted-foreground",
+						children: "Choose your background and we’ll show the most relevant MBA Partner journey immediately."
+					})
+				] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "inline-flex rounded-full border border-border bg-background p-1 text-sm font-semibold",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						onClick: () => {
+							setAudience("mba");
+							navigate({ to: "/" });
+						},
+						className: `rounded-full px-4 py-2 transition ${audience === "mba" ? "bg-primary text-white shadow" : "text-foreground/70"}`,
+						children: "MBA Student"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						onClick: () => {
+							setAudience("cat");
+							navigate({ to: "/cat" });
+						},
+						className: `rounded-full px-4 py-2 transition ${audience === "cat" ? "bg-primary text-white shadow" : "text-foreground/70"}`,
+						children: "CAT / OMET Aspirant"
+					})]
+				})]
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "mt-6 grid gap-4 lg:grid-cols-[1.15fr_0.85fr]",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "grid gap-4 md:grid-cols-2",
+					children: (audience === "mba" ? mbaPrograms : catTracks).map((card) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "group rounded-3xl border border-border bg-gradient-to-br from-primary-soft to-background p-5 transition hover:-translate-y-1 hover:shadow-[var(--shadow-elegant)]",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "flex items-start justify-between gap-3",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "text-xs font-semibold uppercase tracking-[0.3em] text-primary/70",
+									children: audience === "mba" ? "MBA Pathway" : "CAT Track"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+									className: "mt-2 font-display text-xl font-bold text-primary",
+									children: card.name
+								})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "grid h-11 w-11 place-items-center rounded-2xl bg-accent text-accent-foreground",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Award, { className: "h-5 w-5" })
+								})]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "mt-3 text-sm text-muted-foreground",
+								children: "accent" in card ? card.accent : card.note
+							}),
+							audience === "mba" && "to" in card ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+								asChild: true,
+								variant: "outline",
+								className: "mt-4 w-full",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+									to: card.to,
+									children: ["Explore ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "h-4 w-4" })]
+								})
+							}) : null
+						]
+					}, card.name))
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "rounded-3xl border border-border bg-gradient-to-b from-[#0d1830] to-[#142850] p-5 text-white",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "text-xs font-semibold uppercase tracking-[0.3em] text-accent",
+							children: "Which Program Is Right For You?"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "mt-4 space-y-3",
+							children: recommendations.map((question, index) => {
+								const Icon = question.icon;
+								const key = index === 0 ? "mba_cat" : index === 1 ? "placements" : index === 2 ? "case_comp" : index === 3 ? "needs_live_projects" : "preparing_cat";
+								return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "rounded-2xl border border-white/10 bg-white/5 p-3",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "flex items-center gap-2",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { className: "h-4 w-4 text-accent" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+											className: "text-sm font-semibold",
+											children: question.prompt
+										})]
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										className: "mt-3 flex flex-wrap gap-2",
+										children: question.answers.map((answer) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+											onClick: () => handleAnswer(key, answer),
+											className: `rounded-full px-3 py-1.5 text-xs font-semibold transition ${selectedAnswers[key] === answer ? "bg-accent text-accent-foreground" : "bg-white/10 text-white/80 hover:bg-white/15"}`,
+											children: answer
+										}, answer))
+									})]
+								}, question.prompt);
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "mt-5 rounded-2xl border border-white/10 bg-white/5 p-4",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "text-xs font-semibold uppercase tracking-[0.3em] text-accent",
+								children: "Recommended for you"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "mt-2 flex flex-wrap gap-2",
+								children: recommended.map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "rounded-full bg-accent px-3 py-1 text-xs font-bold text-accent-foreground",
+									children: item
+								}, item))
+							})]
+						})
+					]
+				})]
+			})]
+		})
 	});
 }
 var homeFaqs = [
@@ -749,6 +1024,7 @@ function Home() {
 				})]
 			})]
 		}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(AudienceSelector, {}),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 			className: "-mt-8 sm:-mt-10",
 			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TrustStats, {})
@@ -827,9 +1103,10 @@ function Home() {
 							asChild: true,
 							variant: "outline",
 							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-								href: "#",
-								onClick: (event) => event.preventDefault(),
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Send, { className: "h-4 w-4" }), "Telegram Channel"]
+								href: "https://chat.whatsapp.com/EdyvGJbQoV9Jj6eC0slSx9?mode=hq2tcla",
+								target: "_blank",
+								rel: "noreferrer",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Send, { className: "h-4 w-4" }), "Join Community"]
 							})
 						})]
 					})]

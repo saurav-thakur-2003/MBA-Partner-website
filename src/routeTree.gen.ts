@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as CompareRouteImport } from './routes/compare'
+import { Route as CatRouteImport } from './routes/cat'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProgramsSlugRouteImport } from './routes/programs.$slug'
 
@@ -22,6 +23,11 @@ const ProgramsRoute = ProgramsRouteImport.update({
 const CompareRoute = CompareRouteImport.update({
   id: '/compare',
   path: '/compare',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CatRoute = CatRouteImport.update({
+  id: '/cat',
+  path: '/cat',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -37,12 +43,14 @@ const ProgramsSlugRoute = ProgramsSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cat': typeof CatRoute
   '/compare': typeof CompareRoute
   '/programs': typeof ProgramsRouteWithChildren
   '/programs/$slug': typeof ProgramsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cat': typeof CatRoute
   '/compare': typeof CompareRoute
   '/programs': typeof ProgramsRouteWithChildren
   '/programs/$slug': typeof ProgramsSlugRoute
@@ -50,20 +58,22 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cat': typeof CatRoute
   '/compare': typeof CompareRoute
   '/programs': typeof ProgramsRouteWithChildren
   '/programs/$slug': typeof ProgramsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/compare' | '/programs' | '/programs/$slug'
+  fullPaths: '/' | '/cat' | '/compare' | '/programs' | '/programs/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/compare' | '/programs' | '/programs/$slug'
-  id: '__root__' | '/' | '/compare' | '/programs' | '/programs/$slug'
+  to: '/' | '/cat' | '/compare' | '/programs' | '/programs/$slug'
+  id: '__root__' | '/' | '/cat' | '/compare' | '/programs' | '/programs/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CatRoute: typeof CatRoute
   CompareRoute: typeof CompareRoute
   ProgramsRoute: typeof ProgramsRouteWithChildren
 }
@@ -82,6 +92,13 @@ declare module '@tanstack/react-router' {
       path: '/compare'
       fullPath: '/compare'
       preLoaderRoute: typeof CompareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cat': {
+      id: '/cat'
+      path: '/cat'
+      fullPath: '/cat'
+      preLoaderRoute: typeof CatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -115,6 +132,7 @@ const ProgramsRouteWithChildren = ProgramsRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CatRoute: CatRoute,
   CompareRoute: CompareRoute,
   ProgramsRoute: ProgramsRouteWithChildren,
 }

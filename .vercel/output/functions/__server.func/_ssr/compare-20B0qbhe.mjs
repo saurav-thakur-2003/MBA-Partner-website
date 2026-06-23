@@ -1,8 +1,8 @@
 import { c as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { t as Button } from "./button-CoQ3ZP4A.mjs";
-import { i as programs } from "./programs-B_OmzjFp.mjs";
+import { P as Check, U as ArrowRight, n as X } from "../_libs/lucide-react.mjs";
 import { h as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { A as Check, I as ArrowRight, n as X } from "../_libs/lucide-react.mjs";
+import { i as programs } from "./programs-B_OmzjFp.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/compare-20B0qbhe.js
 var import_jsx_runtime = require_jsx_runtime();
 var rows = [

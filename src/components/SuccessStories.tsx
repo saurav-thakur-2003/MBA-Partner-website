@@ -17,10 +17,14 @@ export function SuccessStories() {
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {successStories.map((s) => (
-            <div key={s.name} className="flex items-center gap-4 rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)]">
-              <div className="grid h-14 w-14 shrink-0 place-items-center rounded-full gradient-navy text-white font-bold">
-                {s.name.split(" ").map((p) => p[0]).slice(0, 2).join("")}
-              </div>
+            <div key={s.name} className="flex items-center gap-4 rounded-2xl border border-border bg-card p-5 shadow-(--shadow-card)">
+              {s.avatar ? (
+                <img src={s.avatar} alt={`Photo of ${s.name}`} title={s.name} loading="lazy" className="h-14 w-14 shrink-0 rounded-full object-cover" />
+              ) : (
+                <div className="grid h-14 w-14 shrink-0 place-items-center rounded-full gradient-navy text-white font-bold">
+                  {s.name.split(" ").map((p) => p[0]).slice(0, 2).join("")}
+                </div>
+              )}
               <div className="min-w-0 flex-1">
                 <div className="truncate font-display font-bold text-primary">{s.name}</div>
                 <div className="truncate text-xs text-muted-foreground">{s.college} → {s.company}</div>
