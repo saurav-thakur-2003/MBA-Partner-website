@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Check, X, ArrowRight } from "lucide-react";
+import { ArrowRight, BookOpen, Check, ShieldCheck, Sparkles, Trophy, Users, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { programs } from "@/data/programs";
 
@@ -30,6 +30,15 @@ const rows: { label: string; key: keyof (typeof programs)[number] | "price" }[] 
   { label: "Placement Support", key: "placementSupport" },
 ];
 
+const pastedComparison = [
+  { feature: "Live Project Output (CV)", combo: true, bootcamp: false, liveProject: true, caseComp: false },
+  { feature: "Case Competition Prep", combo: true, bootcamp: false, liveProject: false, caseComp: true },
+  { feature: "Bootcamp Modules (SIP Prep)", combo: true, bootcamp: true, liveProject: false, caseComp: false },
+  { feature: "Mentor 1:1 Sessions", combo: true, bootcamp: true, liveProject: false, caseComp: false },
+  { feature: "Domain Coverage", combo: "All 5", bootcamp: "All 5", liveProject: "1-2", caseComp: "Consulting" },
+  { feature: "ATS CV Points", combo: "5 CV + 7 PI + 7 GDs", bootcamp: "5 CV + 7 PI + 7 GDs", liveProject: "2-5", caseComp: "3-5" },
+];
+
 function ComparePage() {
   return (
     <div>
@@ -46,7 +55,73 @@ function ComparePage() {
       </section>
 
       <section className="container-px mx-auto max-w-7xl pb-20">
-        <div className="overflow-x-auto rounded-2xl border border-border bg-card shadow-[var(--shadow-card)]">
+        <div className="mb-8 grid gap-4 md:grid-cols-4">
+          {[
+            { label: "Best value", value: "All-In-One Combo", icon: Sparkles },
+            { label: "Mentor access", value: "1:1 + live cohorts", icon: Users },
+            { label: "Trust signal", value: "Transparent outcomes", icon: ShieldCheck },
+            { label: "Conversion driver", value: "Urgency + clarity", icon: Trophy },
+          ].map((item) => {
+            const Icon = item.icon;
+            return (
+              <div key={item.label} className="rounded-[1.6rem] border border-border bg-card p-4 shadow-[var(--shadow-card)]">
+                <div className="flex items-center gap-3">
+                  <div className="grid h-10 w-10 place-items-center rounded-2xl bg-primary-soft text-primary">
+                    <Icon className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-semibold uppercase tracking-[0.28em] text-primary/60">{item.label}</div>
+                    <div className="font-display text-base font-bold text-primary">{item.value}</div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="mb-8 rounded-[2rem] border border-border bg-card p-6 shadow-[var(--shadow-card)]">
+          <div className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+            <BookOpen className="h-4 w-4" />
+            Pasted comparison summary
+          </div>
+          <div className="mt-5 overflow-x-auto">
+            <table className="w-full min-w-[760px] text-left text-sm">
+              <thead>
+                <tr className="border-b border-border bg-gradient-to-r from-primary-soft to-accent/10">
+                  <th className="rounded-tl-2xl p-4 text-xs font-semibold uppercase tracking-[0.28em] text-primary/70">Feature</th>
+                  <th className="p-4 text-sm font-semibold text-primary">All-In-One Combo</th>
+                  <th className="p-4 text-sm font-semibold text-primary">Bootcamp</th>
+                  <th className="p-4 text-sm font-semibold text-primary">Live Project</th>
+                  <th className="rounded-tr-2xl p-4 text-sm font-semibold text-primary">Case Comp</th>
+                </tr>
+              </thead>
+              <tbody>
+                {pastedComparison.map((row) => (
+                  <tr key={row.feature} className="border-b border-border/70 transition hover:bg-primary-soft/35">
+                    <td className="p-3 font-medium text-foreground">{row.feature}</td>
+                    {[row.combo, row.bootcamp, row.liveProject, row.caseComp].map((cell, index) => (
+                      <td key={index} className="p-3 text-muted-foreground">
+                        {cell === true ? (
+                          <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-600">
+                            <Check className="h-4 w-4" />
+                          </span>
+                        ) : cell === false ? (
+                          <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-slate-500/10 text-slate-400">
+                            <X className="h-4 w-4" />
+                          </span>
+                        ) : (
+                          <span className="rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold text-primary">{cell}</span>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div className="overflow-x-auto rounded-3xl border border-border bg-card shadow-[var(--shadow-card)]">
           <table className="w-full min-w-[840px] text-left text-sm">
             <thead>
               <tr className="border-b border-border bg-primary-soft">

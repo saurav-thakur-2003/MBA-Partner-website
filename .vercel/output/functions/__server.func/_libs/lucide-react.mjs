@@ -141,6 +141,19 @@ var ArrowRight = createLucideIcon("arrow-right", [["path", {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var ArrowUpRight = createLucideIcon("arrow-up-right", [["path", {
+	d: "M7 7h10v10",
+	key: "1tivn9"
+}], ["path", {
+	d: "M7 17 17 7",
+	key: "1vkiza"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var Award = createLucideIcon("award", [["path", {
 	d: "m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526",
 	key: "1yiouv"
@@ -197,6 +210,46 @@ var BookOpen = createLucideIcon("book-open", [["path", {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var Brain = createLucideIcon("brain", [
+	["path", {
+		d: "M12 18V5",
+		key: "adv99a"
+	}],
+	["path", {
+		d: "M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4",
+		key: "1e3is1"
+	}],
+	["path", {
+		d: "M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5",
+		key: "1gqd8o"
+	}],
+	["path", {
+		d: "M17.997 5.125a4 4 0 0 1 2.526 5.77",
+		key: "iwvgf7"
+	}],
+	["path", {
+		d: "M18 18a4 4 0 0 0 2-7.464",
+		key: "efp6ie"
+	}],
+	["path", {
+		d: "M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517",
+		key: "1gq6am"
+	}],
+	["path", {
+		d: "M6 18a4 4 0 0 1-2-7.464",
+		key: "k1g0md"
+	}],
+	["path", {
+		d: "M6.003 5.125a4 4 0 0 0-2.526 5.77",
+		key: "q97ue3"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var Briefcase = createLucideIcon("briefcase", [["path", {
 	d: "M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16",
 	key: "jecpp"
@@ -234,6 +287,64 @@ var Building2 = createLucideIcon("building-2", [
 	["path", {
 		d: "M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16",
 		key: "16ra0t"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Calculator = createLucideIcon("calculator", [
+	["rect", {
+		width: "16",
+		height: "20",
+		x: "4",
+		y: "2",
+		rx: "2",
+		key: "1nb95v"
+	}],
+	["line", {
+		x1: "8",
+		x2: "16",
+		y1: "6",
+		y2: "6",
+		key: "x4nwl0"
+	}],
+	["line", {
+		x1: "16",
+		x2: "16",
+		y1: "14",
+		y2: "18",
+		key: "wjye3r"
+	}],
+	["path", {
+		d: "M16 10h.01",
+		key: "1m94wz"
+	}],
+	["path", {
+		d: "M12 10h.01",
+		key: "1nrarc"
+	}],
+	["path", {
+		d: "M8 10h.01",
+		key: "19clt8"
+	}],
+	["path", {
+		d: "M12 14h.01",
+		key: "1etili"
+	}],
+	["path", {
+		d: "M8 14h.01",
+		key: "6423bh"
+	}],
+	["path", {
+		d: "M12 18h.01",
+		key: "mhygvu"
+	}],
+	["path", {
+		d: "M8 18h.01",
+		key: "lrp35t"
 	}]
 ]);
 /**
@@ -294,6 +405,30 @@ var CalendarDays = createLucideIcon("calendar-days", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var ChartColumn = createLucideIcon("chart-column", [
+	["path", {
+		d: "M3 3v16a2 2 0 0 0 2 2h16",
+		key: "c24i48"
+	}],
+	["path", {
+		d: "M18 17V9",
+		key: "2bz60n"
+	}],
+	["path", {
+		d: "M13 17V5",
+		key: "1frdt8"
+	}],
+	["path", {
+		d: "M8 17v-3",
+		key: "17ska0"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var ChartLine = createLucideIcon("chart-line", [["path", {
 	d: "M3 3v16a2 2 0 0 0 2 2h16",
 	key: "c24i48"
@@ -345,6 +480,21 @@ var CircleCheck = createLucideIcon("circle-check", [["circle", {
 }], ["path", {
 	d: "m9 12 2 2 4-4",
 	key: "dzmm74"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var CirclePlay = createLucideIcon("circle-play", [["path", {
+	d: "M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z",
+	key: "kmsa83"
+}], ["circle", {
+	cx: "12",
+	cy: "12",
+	r: "10",
+	key: "1mglay"
 }]]);
 /**
 * @license lucide-react v0.575.0 - ISC
@@ -904,6 +1054,23 @@ var Users = createLucideIcon("users", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var Video = createLucideIcon("video", [["path", {
+	d: "m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5",
+	key: "ftymec"
+}], ["rect", {
+	x: "2",
+	y: "6",
+	width: "14",
+	height: "12",
+	rx: "2",
+	key: "158x01"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var X = createLucideIcon("x", [["path", {
 	d: "M18 6 6 18",
 	key: "1bl5f8"
@@ -925,4 +1092,4 @@ var Youtube = createLucideIcon("youtube", [["path", {
 	key: "1jp15x"
 }]]);
 //#endregion
-export { CircleUser as A, Bolt as B, Mail as C, FileText as D, GraduationCap as E, ChartLine as F, Award as H, CalendarDays as I, Building2 as L, ChevronRight as M, ChevronDown as N, Clock as O, Check as P, Briefcase as R, MapPin as S, Instagram as T, ArrowRight as U, BadgeCheck as V, ArrowLeft as W, MessagesSquare as _, TrendingUp as a, Menu as b, Star as c, Send as d, Quote as f, MoonStar as g, PhoneCall as h, Trophy as i, CircleCheck as j, Clock3 as k, Sparkles as l, Phone as m, X as n, Target as o, Play as p, Users as r, SunMedium as s, Youtube as t, ShieldCheck as u, MessageCircle as v, Linkedin as w, Megaphone as x, MessageCircleMore as y, BookOpen as z };
+export { Clock3 as A, Calculator as B, MapPin as C, GraduationCap as D, Instagram as E, ChevronDown as F, Bolt as G, Briefcase as H, Check as I, ArrowUpRight as J, BadgeCheck as K, ChartLine as L, CirclePlay as M, CircleCheck as N, FileText as O, ChevronRight as P, ChartColumn as R, Megaphone as S, Linkedin as T, Brain as U, Building2 as V, BookOpen as W, ArrowLeft as X, ArrowRight as Y, MoonStar as _, Trophy as a, MessageCircleMore as b, SunMedium as c, ShieldCheck as d, Send as f, PhoneCall as g, Phone as h, Users as i, CircleUser as j, Clock as k, Star as l, Play as m, X as n, TrendingUp as o, Quote as p, Award as q, Video as r, Target as s, Youtube as t, Sparkles as u, MessagesSquare as v, Mail as w, Menu as x, MessageCircle as y, CalendarDays as z };

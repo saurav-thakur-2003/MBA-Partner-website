@@ -36,20 +36,20 @@ export const successStories = [
 export const pricing = {
   placementsBootcamp: {
     title: "Placements Bootcamp (Flagship)",
-    price: "₹7,499",
-    was: "₹7,999",
+    price: "₹24,999",
+    was: "₹39,999",
     includes: ["5 CV slots", "7 Mock PIs", "7 GD slots", "12 Group Domain Sessions"],
   },
   bootcampCaseComp: {
     title: "Bootcamp + Case Comp",
-    price: "₹9,499",
-    was: "₹9,999",
+    price: "₹14,999",
+    was: "₹22,999",
     includes: ["Dominating Case Competitions", "Canva Premium 1yr"],
   },
   bootcampLiveProject: {
     title: "Bootcamp + Live Project",
-    price: "₹11,499",
-    was: "₹11,999",
+    price: "₹9,999",
+    was: "₹16,999",
     includes: ["Live Project, 1 domain, 2 months via ProdMark"],
   },
   liveProjects: [
@@ -58,7 +58,7 @@ export const pricing = {
   ],
   liveProjectDomains: ["Consulting", "HR", "Finance", "Marketing", "Operations", "ProdMan"],
   caseCompetitions: {
-    dominating: { title: "Dominating Case Competitions", price: "₹3,499", was: "₹3,999", includes: ["30+ winning PPTs", "AIR 1 mentorship", "Canva Premium 1yr"] },
+    dominating: { title: "Dominating Case Competitions", price: "₹14,999", was: "₹22,999", includes: ["30+ winning PPTs", "AIR 1 mentorship", "Canva Premium 1yr"] },
     combo: { title: "Case Comp Combo", price: "₹8,499", was: "₹8,999", includes: ["Live Project 1 domain 2 months", "8 live sessions", "5 CV points"] },
   },
   certifications: [
@@ -67,8 +67,8 @@ export const pricing = {
   ],
   allInOneCombo2: {
     title: "All-in-One Combo 2",
-    price: "₹13,999",
-    was: "₹14,500",
+    price: "₹39,999",
+    was: "₹79,997",
     includes: ["Bootcamp Mini", "Live Project (1 domain, 2 months)", "Case Competitions course"],
   },
 };
@@ -80,3 +80,52 @@ export const trust = {
   ratingMeta: "Average Rating by 700+ Students",
   mentorsMeta: "Mentors from Top B-Schools — IIMs, XLRI, FMS and other leading institutions",
 };
+
+export const resources = [
+  {
+    title: "B-School Comparison & CV Skeleton",
+    url: "https://www.youtube.com/watch?v=zZXBRobYRCE&t=34s",
+    type: "YouTube",
+    description: "Compare colleges, plan your application and structure a high-impact CV.",
+  },
+  {
+    title: "MBA Game Plan",
+    url: "https://www.youtube.com/watch?v=eIgTrOVCyRw",
+    type: "YouTube",
+    description: "A practical roadmap for MBA students to use inside the platform.",
+  },
+  {
+    title: "HR Contacts (Demo)",
+    url: "https://www.youtube.com/watch?v=OhVg0Wf9JzU",
+    type: "YouTube",
+    description: "How the network and contacts library should feel for students.",
+  },
+];
+
+export const mentorPasted = [
+  { name: "Yash Gohil", college: "IIM Ahmedabad", company: "Accenture Consulting", domain: "Consulting", linkedin: "https://www.linkedin.com/in/yashgohil14/" },
+  { name: "Shen Shaji", college: "IIM Bangalore", company: "Media.Net", domain: "Product Management", linkedin: "https://www.linkedin.com/in/shenshaji/" },
+  { name: "Vidhi Barolia", college: "IIM Lucknow", company: "PwC US", domain: "Finance", linkedin: "https://www.linkedin.com/in/vidhi-barolia-a555a9271/" },
+  { name: "Aadesh Gupta", college: "IIM Mumbai", company: "L'Oreal", domain: "Marketing", linkedin: "https://www.linkedin.com/in/aadesh-gupta-609528194/" },
+  { name: "Ananyo Roy", college: "XLRI Jamshedpur", company: "TAS", domain: "HR", linkedin: "https://www.linkedin.com/in/ananyosroy/" },
+  { name: "Ashutosh Gupta", college: "IIM Lucknow", company: "Gulf Oil", domain: "Operations", linkedin: "https://www.linkedin.com/in/ashutosh-gupta-iiml/" },
+];
+
+export const contactLeads = [
+  { name: "Sabeen", email: "mpsabeen@gmail.com", contact: "7598200019", college: "IIM Lucknow" },
+  { name: "Aryan Vivian", email: "aryan.vivian.30@gmail.com", contact: "7738086767", college: "NMIMS Mumbai" },
+  { name: "Abhishek Rohilla", email: "abhirohilla571@gmail.com", contact: "8684932166", college: "IIM Kozhikode" },
+  { name: "Divija Bansod", email: "divijabansod@gmail.com", contact: "9673838769", college: "IIM Lucknow" },
+  { name: "Rupali Priyadarshini", email: "rupalipriyadarshini16@gmail.com", contact: "7381218328", college: "IIM Indore" },
+];
+
+export const prodmarkOffer = [
+  "Under Prodmark Business Consultants Pvt Ltd",
+  "2 months / 1 month flexible duration",
+  "8 hours or 4 hours of sessions",
+  "AI platform for profile assessment, CV preparation and mock PIs",
+  "5 ATS-ready CV points or 2 ATS-ready CV points",
+  "Certificate of completion",
+  "Max 2 hours/day commitment",
+  "Group offer: join in a group of 2 and get 30% off",
+];

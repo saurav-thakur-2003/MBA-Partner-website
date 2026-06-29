@@ -27,7 +27,11 @@ import { SuccessStories } from "@/components/SuccessStories";
 import { VideoTestimonials } from "@/components/VideoTestimonials";
 import { FAQ } from "@/components/FAQ";
 import { CTASection } from "@/components/CTASection";
+import { ResourcesSection } from "@/components/ResourcesSection";
+import { PastedMentorsSection } from "@/components/PastedMentorsSection";
 import { AudienceSelector } from "@/components/AudienceSelector";
+import { CareerStageGuide } from "@/components/CareerStageGuide";
+import { MBAStudentToolkit } from "@/components/MBAStudentToolkit";
 import { programs } from "@/data/programs";
 
 export const Route = createFileRoute("/")({
@@ -284,9 +288,15 @@ function Home() {
 
       <LeadForm />
 
+      <ResourcesSection />
+
       <div className="-mt-8 sm:-mt-10">
         <TrustStats />
       </div>
+
+      <CareerStageGuide />
+
+      <MBAStudentToolkit />
 
       <section className="container-px mx-auto max-w-7xl py-20">
         <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
@@ -314,6 +324,7 @@ function Home() {
 
       <Roadmap />
       <MentorShowcase />
+      <PastedMentorsSection />
       <SuccessStories />
       <VideoTestimonials />
       <section className="container-px mx-auto max-w-7xl py-8">

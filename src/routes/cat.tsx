@@ -3,6 +3,7 @@ import { ArrowRight, BookOpen, ChevronRight, GraduationCap, Target, Trophy, User
 import { Button } from "@/components/ui/button";
 import { FAQ } from "@/components/FAQ";
 import { CTASection } from "@/components/CTASection";
+import { CatToolsSection } from "@/components/CatToolsSection";
 
 export const Route = createFileRoute("/cat")({
   head: () => ({
@@ -141,6 +142,7 @@ function CatPage() {
         </div>
       </section>
 
+      <CatToolsSection />
       <FAQ items={faqs} />
       <CTASection />
     </div>
