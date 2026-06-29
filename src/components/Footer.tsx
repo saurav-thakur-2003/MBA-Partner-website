@@ -1,6 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin, Linkedin, Instagram, Youtube } from "lucide-react";
 
+const links = {
+  officialInstagram: "https://www.instagram.com/mba_partner?igsh=dGZuMmoyb3V2eDlx",
+  funInstagram: "https://www.instagram.com/mba_laughterwala?igsh=ZngzMmRnN3k3ZjZ2",
+  youtube: "https://youtube.com/@mbapartner?si=0TXLOPjxtMiHvJU7",
+  linkedin: "https://www.linkedin.com/in/prodmarkconsulting?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+};
+
 export function Footer() {
   return (
     <footer className="gradient-navy mt-24 text-white">
@@ -19,12 +26,22 @@ export function Footer() {
             <p className="mt-4 text-sm text-white/70">
               Initiative by alumni of IIMs, XLRI & SPJIMR — helping MBA students unlock top-tier careers.
             </p>
-            <div className="mt-5 flex gap-3">
-              <a href="#" aria-label="LinkedIn" className="grid h-9 w-9 place-items-center rounded-full bg-white/10 hover:bg-accent hover:text-accent-foreground"><Linkedin className="h-4 w-4" /></a>
-              <a href="#" aria-label="Instagram" className="grid h-9 w-9 place-items-center rounded-full bg-white/10 hover:bg-accent hover:text-accent-foreground"><Instagram className="h-4 w-4" /></a>
-              <a href="#" aria-label="YouTube" className="grid h-9 w-9 place-items-center rounded-full bg-white/10 hover:bg-accent hover:text-accent-foreground"><Youtube className="h-4 w-4" /></a>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <a href={links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 hover:bg-accent hover:text-accent-foreground">
+                <Linkedin className="h-4 w-4" />
+              </a>
+              <a href={links.officialInstagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 hover:bg-accent hover:text-accent-foreground">
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a href={links.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 hover:bg-accent hover:text-accent-foreground">
+                <Youtube className="h-4 w-4" />
+              </a>
+              <a href={links.funInstagram} target="_blank" rel="noreferrer" aria-label="Fun Instagram" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 hover:bg-accent hover:text-accent-foreground">
+                <Instagram className="h-4 w-4" />
+              </a>
             </div>
           </div>
+
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-accent">Programs</h4>
             <ul className="mt-4 space-y-2 text-sm text-white/75">
@@ -34,6 +51,7 @@ export function Footer() {
               <li><Link to="/programs/all-in-one-combo" className="hover:text-accent">All-In-One Combo</Link></li>
             </ul>
           </div>
+
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-accent">Resources</h4>
             <ul className="mt-4 space-y-2 text-sm text-white/75">
@@ -43,6 +61,7 @@ export function Footer() {
               <li><a href="#stories" className="hover:text-accent">Success Stories</a></li>
             </ul>
           </div>
+
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-accent">Contact</h4>
             <ul className="mt-4 space-y-3 text-sm text-white/75">
@@ -52,12 +71,14 @@ export function Footer() {
             </ul>
           </div>
         </div>
+
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row">
           <div>© {new Date().getFullYear()} MBA Partner. All rights reserved.</div>
-          <div className="flex gap-4">
-            <a href="#" className="hover:text-white">Privacy</a>
-            <a href="#" className="hover:text-white">Terms</a>
-            <a href="#" className="hover:text-white">Refund Policy</a>
+          <div className="flex flex-wrap gap-4">
+            <a href={links.officialInstagram} target="_blank" rel="noreferrer" className="hover:text-white">Official Insta</a>
+            <a href={links.funInstagram} target="_blank" rel="noreferrer" className="hover:text-white">Fun Insta</a>
+            <a href={links.youtube} target="_blank" rel="noreferrer" className="hover:text-white">YouTube</a>
+            <a href={links.linkedin} target="_blank" rel="noreferrer" className="hover:text-white">LinkedIn</a>
           </div>
         </div>
       </div>

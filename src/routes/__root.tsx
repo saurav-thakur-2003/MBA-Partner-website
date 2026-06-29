@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingCommunityIcons } from "@/components/FloatingCommunityIcons";
+import { FloatingResourceTabs } from "@/components/FloatingResourceTabs";
 
 function NotFoundComponent() {
   return (
@@ -147,6 +148,7 @@ function RootComponent() {
         </main>
         <Footer />
         <FloatingCommunityIcons />
+        <FloatingResourceTabs />
       </div>
     </QueryClientProvider>
   );

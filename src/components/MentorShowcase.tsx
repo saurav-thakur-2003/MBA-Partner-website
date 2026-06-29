@@ -25,13 +25,13 @@ export function MentorShowcase() {
           const initials = m.name.split(" ").map((p) => p[0]).slice(0, 2).join("");
           const bg = colors[i % colors.length];
           return (
-            <div key={m.name} className="group rounded-2xl border border-border bg-card p-5 transition-all hover:-translate-y-1 hover:border-accent/50 hover:shadow-[var(--shadow-card)]">
-              <div className="grid h-20 w-20 place-items-center rounded-2xl text-2xl font-bold text-white" style={{ background: bg }}>
+            <div key={m.name} className="group rounded-2xl border border-border bg-card p-4 transition-all hover:-translate-y-1 hover:border-accent/50 hover:shadow-[var(--shadow-card)]">
+              <div className="grid h-16 w-16 place-items-center rounded-2xl text-xl font-bold text-white" style={{ background: bg }}>
                 {initials}
               </div>
-              <h3 className="mt-4 font-display text-base font-bold text-primary">{m.name}</h3>
+              <h3 className="mt-3 font-display text-base font-bold text-primary">{m.name}</h3>
               <p className="text-xs font-medium text-accent-foreground/80">{m.role}</p>
-              <div className="mt-3 space-y-1.5 border-t border-border pt-3 text-xs text-muted-foreground">
+              <div className="mt-2 space-y-1 border-t border-border pt-2 text-xs text-muted-foreground">
                 <div className="flex items-center gap-1.5"><GraduationCap className="h-3.5 w-3.5 text-primary" />{m.college}</div>
                 <div className="flex items-center gap-1.5"><Building2 className="h-3.5 w-3.5 text-primary" />{m.company}</div>
               </div>

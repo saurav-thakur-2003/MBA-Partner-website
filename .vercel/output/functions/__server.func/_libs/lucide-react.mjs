@@ -604,6 +604,33 @@ var GraduationCap = createLucideIcon("graduation-cap", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var Image = createLucideIcon("image", [
+	["rect", {
+		width: "18",
+		height: "18",
+		x: "3",
+		y: "3",
+		rx: "2",
+		ry: "2",
+		key: "1m3agn"
+	}],
+	["circle", {
+		cx: "9",
+		cy: "9",
+		r: "2",
+		key: "af1f0g"
+	}],
+	["path", {
+		d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21",
+		key: "1xmnt7"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var Instagram = createLucideIcon("instagram", [
 	["rect", {
 		width: "20",
@@ -770,6 +797,30 @@ var MessagesSquare = createLucideIcon("messages-square", [["path", {
 	d: "M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1",
 	key: "1qfcsi"
 }]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Mic = createLucideIcon("mic", [
+	["path", {
+		d: "M12 19v3",
+		key: "npa21l"
+	}],
+	["path", {
+		d: "M19 10v2a7 7 0 0 1-14 0v-2",
+		key: "1vc78b"
+	}],
+	["rect", {
+		x: "9",
+		y: "2",
+		width: "6",
+		height: "13",
+		rx: "3",
+		key: "s6n7sd"
+	}]
+]);
 /**
 * @license lucide-react v0.575.0 - ISC
 *
@@ -1092,4 +1143,4 @@ var Youtube = createLucideIcon("youtube", [["path", {
 	key: "1jp15x"
 }]]);
 //#endregion
-export { Clock3 as A, Calculator as B, MapPin as C, GraduationCap as D, Instagram as E, ChevronDown as F, Bolt as G, Briefcase as H, Check as I, ArrowUpRight as J, BadgeCheck as K, ChartLine as L, CirclePlay as M, CircleCheck as N, FileText as O, ChevronRight as P, ChartColumn as R, Megaphone as S, Linkedin as T, Brain as U, Building2 as V, BookOpen as W, ArrowLeft as X, ArrowRight as Y, MoonStar as _, Trophy as a, MessageCircleMore as b, SunMedium as c, ShieldCheck as d, Send as f, PhoneCall as g, Phone as h, Users as i, CircleUser as j, Clock as k, Star as l, Play as m, X as n, TrendingUp as o, Quote as p, Award as q, Video as r, Target as s, Youtube as t, Sparkles as u, MessagesSquare as v, Mail as w, Menu as x, MessageCircle as y, CalendarDays as z };
+export { FileText as A, ChartColumn as B, Megaphone as C, Instagram as D, Linkedin as E, CircleCheck as F, Brain as G, Calculator as H, ChevronRight as I, BadgeCheck as J, BookOpen as K, ChevronDown as L, Clock3 as M, CircleUser as N, Image as O, CirclePlay as P, ArrowLeft as Q, Check as R, Menu as S, Mail as T, Building2 as U, CalendarDays as V, Briefcase as W, ArrowUpRight as X, Award as Y, ArrowRight as Z, MoonStar as _, Trophy as a, MessageCircle as b, SunMedium as c, ShieldCheck as d, Send as f, PhoneCall as g, Phone as h, Users as i, Clock as j, GraduationCap as k, Star as l, Play as m, X as n, TrendingUp as o, Quote as p, Bolt as q, Video as r, Target as s, Youtube as t, Sparkles as u, Mic as v, MapPin as w, MessageCircleMore as x, MessagesSquare as y, ChartLine as z };

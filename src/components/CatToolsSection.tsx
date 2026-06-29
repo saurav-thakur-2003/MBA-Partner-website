@@ -1,4 +1,4 @@
-import { Calculator, FileText, Target, ChartColumn, Brain } from "lucide-react";
+import { Calculator, FileText, Target, ChartColumn, Brain, Users, Mic, Video } from "lucide-react";
 
 const tools = [
   { icon: FileText, title: "50 Free sectional mocks", desc: "VARC, QA and LRDI practice blocks with score tracking." },
@@ -9,6 +9,9 @@ const tools = [
   { icon: FileText, title: "Leaderboard", desc: "Compete on mocks and track rank across the cohort." },
   { icon: Brain, title: "SNAP / NMAT / XAT", desc: "Coverage for OMETs and alternate exam prep." },
   { icon: Target, title: "Profile improvement", desc: "Answer the 'why you?' question with stronger story framing." },
+  { icon: Mic, title: "10 PIs + 10 GDs", desc: "Interview and group discussion practice with structured feedback." },
+  { icon: Video, title: "100+ transcripts", desc: "Past year transcripts and mentoring walkthroughs." },
+  { icon: Users, title: "Top mentor access", desc: "Top B-school mentors and a 60-second mentor apply flow." },
 ];
 
 export function CatToolsSection() {

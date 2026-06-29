@@ -15,6 +15,7 @@ import {
   MessageCircleMore,
   Send,
   PhoneCall,
+  FileText,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TrustStats } from "@/components/TrustStats";
@@ -32,6 +33,8 @@ import { PastedMentorsSection } from "@/components/PastedMentorsSection";
 import { AudienceSelector } from "@/components/AudienceSelector";
 import { CareerStageGuide } from "@/components/CareerStageGuide";
 import { MBAStudentToolkit } from "@/components/MBAStudentToolkit";
+import { BrochureShowcase } from "@/components/BrochureShowcase";
+import { FeaturedVideosStrip } from "@/components/FeaturedVideosStrip";
 import { programs } from "@/data/programs";
 
 export const Route = createFileRoute("/")({
@@ -165,6 +168,11 @@ function Home() {
                   Join Telegram Channel
                 </a>
               </Button>
+              <Button asChild variant="outline" size="xl">
+                <a href="/brochures/sample-case-comp-brochure.pdf" target="_blank" rel="noreferrer">
+                  <FileText className="h-4 w-4" /> View Case Comp Brochure
+                </a>
+              </Button>
             </div>
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
               {["No-cost EMI", "100% placement support", "MBB & FAANG mentors"].map((t) => (
@@ -284,6 +292,8 @@ function Home() {
         </div>
       </section>
 
+      <FeaturedVideosStrip />
+
       <AudienceSelector />
 
       <LeadForm />
@@ -297,6 +307,8 @@ function Home() {
       <CareerStageGuide />
 
       <MBAStudentToolkit />
+
+      <BrochureShowcase />
 
       <section className="container-px mx-auto max-w-7xl py-20">
         <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
@@ -315,7 +327,7 @@ function Home() {
             <Link to="/compare">Compare All <ArrowRight className="h-4 w-4" /></Link>
           </Button>
         </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-4">
           {programs.map((p) => (
             <ProgramCard key={p.slug} program={p} />
           ))}

@@ -28,6 +28,47 @@ export interface Program {
 
 export const programs: Program[] = [
   {
+    slug: "live-projects",
+    name: "Live Projects",
+    tagline: "Real industry projects, real CV impact",
+    shortDescription:
+      "Work on live business problems from real startups and corporates across consulting, marketing, finance and operations. Build a portfolio recruiters cannot ignore.",
+    duration: "6-10 Weeks per project",
+    price: 9999,
+    originalPrice: 16999,
+    outcomes: [
+      "2 live industry projects on your CV",
+      "Verified Letter of Recommendation",
+      "Hands-on consulting / GTM / ops experience",
+      "Direct exposure to founders & senior leaders",
+    ],
+    whoFor: [
+      "MBA students with limited pre-MBA experience",
+      "Career switchers entering consulting / product / marketing",
+      "Anyone wanting CV-stand-out beyond classroom learning",
+    ],
+    features: [
+      { title: "Vetted Project Pool", description: "30+ live projects from funded startups & corporates each month." },
+      { title: "Domain Choice", description: "Consulting, Marketing, Operations, Finance, Product." },
+      { title: "Mentor Oversight", description: "Senior mentor reviews weekly deliverables." },
+      { title: "Verified LOR", description: "Letter of Recommendation from the company you worked with." },
+    ],
+    modules: [
+      { week: "Week 1", title: "Project Matching", topics: ["Domain selection", "Company brief", "Kick-off call"] },
+      { week: "Week 2-6", title: "Execution Sprint", topics: ["Weekly deliverables", "Stakeholder reviews", "Mentor checkpoints"] },
+      { week: "Week 7-8", title: "Final Delivery", topics: ["Final presentation", "Feedback report", "LOR generation"] },
+    ],
+    mentorship: "Weekly mentor reviews",
+    mockInterviews: "Project pitch practice",
+    projects: "2 live industry projects",
+    certificates: "Verified company-issued LOR",
+    placementSupport: "Network introductions",
+    faqs: [
+      { q: "Are these paid projects?", a: "These are structured learning projects — some companies offer stipends, but the core value is the CV credential and LOR." },
+      { q: "Can I work on a project of my choice?", a: "Yes — you pick your domain and we match you to 2-3 project options." },
+    ],
+  },
+  {
     slug: "placement-bootcamp",
     name: "Placement Bootcamp",
     tagline: "Land your dream Day-Zero offer",
@@ -119,47 +160,6 @@ export const programs: Program[] = [
     ],
   },
   {
-    slug: "live-projects",
-    name: "Live Projects",
-    tagline: "Real industry projects, real CV impact",
-    shortDescription:
-      "Work on live business problems from real startups and corporates across consulting, marketing, finance and operations. Build a portfolio recruiters cannot ignore.",
-    duration: "6-10 Weeks per project",
-    price: 9999,
-    originalPrice: 16999,
-    outcomes: [
-      "2 live industry projects on your CV",
-      "Verified Letter of Recommendation",
-      "Hands-on consulting / GTM / ops experience",
-      "Direct exposure to founders & senior leaders",
-    ],
-    whoFor: [
-      "MBA students with limited pre-MBA experience",
-      "Career switchers entering consulting / product / marketing",
-      "Anyone wanting CV-stand-out beyond classroom learning",
-    ],
-    features: [
-      { title: "Vetted Project Pool", description: "30+ live projects from funded startups & corporates each month." },
-      { title: "Domain Choice", description: "Consulting, Marketing, Operations, Finance, Product." },
-      { title: "Mentor Oversight", description: "Senior mentor reviews weekly deliverables." },
-      { title: "Verified LOR", description: "Letter of Recommendation from the company you worked with." },
-    ],
-    modules: [
-      { week: "Week 1", title: "Project Matching", topics: ["Domain selection", "Company brief", "Kick-off call"] },
-      { week: "Week 2-6", title: "Execution Sprint", topics: ["Weekly deliverables", "Stakeholder reviews", "Mentor checkpoints"] },
-      { week: "Week 7-8", title: "Final Delivery", topics: ["Final presentation", "Feedback report", "LOR generation"] },
-    ],
-    mentorship: "Weekly mentor reviews",
-    mockInterviews: "Project pitch practice",
-    projects: "2 live industry projects",
-    certificates: "Verified company-issued LOR",
-    placementSupport: "Network introductions",
-    faqs: [
-      { q: "Are these paid projects?", a: "These are structured learning projects — some companies offer stipends, but the core value is the CV credential and LOR." },
-      { q: "Can I work on a project of my choice?", a: "Yes — you pick your domain and we match you to 2-3 project options." },
-    ],
-  },
-  {
     slug: "all-in-one-combo",
     name: "All-In-One Combo",
     tagline: "The complete MBA Career OS",
@@ -208,31 +208,31 @@ export const programs: Program[] = [
 export const getProgram = (slug: string) => programs.find((p) => p.slug === slug);
 
 export const mentors = [
-  { name: "Aarav Mehta", college: "IIM Ahmedabad", company: "McKinsey & Co.", role: "Engagement Manager", avatar: "https://randomuser.me/api/portraits/men/11.jpg" },
-  { name: "Diya Sharma", college: "IIM Bangalore", company: "Bain & Company", role: "Consultant", avatar: "https://randomuser.me/api/portraits/women/21.jpg" },
-  { name: "Rohan Verma", college: "XLRI Jamshedpur", company: "BCG", role: "Senior Associate", avatar: "https://randomuser.me/api/portraits/men/32.jpg" },
-  { name: "Ananya Iyer", college: "SPJIMR Mumbai", company: "Kearney", role: "Manager", avatar: "https://randomuser.me/api/portraits/women/18.jpg" },
-  { name: "Karan Singh", college: "IIM Calcutta", company: "Goldman Sachs", role: "VP, Strategy", avatar: "https://randomuser.me/api/portraits/men/45.jpg" },
-  { name: "Sneha Kapoor", college: "MDI Gurgaon", company: "Unilever", role: "Brand Manager", avatar: "https://randomuser.me/api/portraits/women/39.jpg" },
-  { name: "Vikram Rao", college: "IIM Lucknow", company: "Amazon", role: "Sr. PM", avatar: "https://randomuser.me/api/portraits/men/7.jpg" },
-  { name: "Pooja Nair", college: "NMIMS Mumbai", company: "PwC Strategy&", role: "Manager", avatar: "https://randomuser.me/api/portraits/women/52.jpg" },
+  { name: "Aarav Mehta", college: "IIM Ahmedabad", company: "McKinsey & Co.", role: "Engagement Manager", avatar: "/images/1742217638011.avif" },
+  { name: "Diya Sharma", college: "IIM Bangalore", company: "Bain & Company", role: "Consultant", avatar: "/images/1743480492229.avif" },
+  { name: "Rohan Verma", college: "XLRI Jamshedpur", company: "BCG", role: "Senior Associate", avatar: "/images/1744043234702_edited.avif" },
+  { name: "Ananya Iyer", college: "SPJIMR Mumbai", company: "Kearney", role: "Manager", avatar: "/images/1744196937868.avif" },
+  { name: "Karan Singh", college: "IIM Calcutta", company: "Goldman Sachs", role: "VP, Strategy", avatar: "/images/1744918790790.avif" },
+  { name: "Sneha Kapoor", college: "MDI Gurgaon", company: "Unilever", role: "Brand Manager", avatar: "/images/1722797021578.avif" },
+  { name: "Vikram Rao", college: "IIM Lucknow", company: "Amazon", role: "Sr. PM", avatar: "/images/1718660255500.avif" },
+  { name: "Pooja Nair", college: "NMIMS Mumbai", company: "PwC Strategy&", role: "Manager", avatar: "/images/1718538669332.avif" },
 ];
 
 export const successStories = [
-  { name: "Aayushi Gupta", college: "FMS Delhi", company: "Amazon", package: "—", avatar: "https://randomuser.me/api/portraits/women/68.jpg" },
-  { name: "Shruti Satdeve", college: "IIM Udaipur", company: "Accenture Strategy", package: "—", avatar: "https://randomuser.me/api/portraits/women/65.jpg" },
-  { name: "Megha Bhattacharya", college: "IIM Mumbai", company: "Kearney", package: "—", avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
-  { name: "Hemang Agarwal", college: "MDI Gurgaon", company: "Reliance Group", package: "—", avatar: "https://randomuser.me/api/portraits/men/34.jpg" },
-  { name: "Akula Vamsi", college: "SPJIMR", company: "JM Financial", package: "—", avatar: "https://randomuser.me/api/portraits/men/85.jpg" },
-  { name: "Shikhar Kapoor", college: "IIM Kozhikode", company: "Pine Labs", package: "—", avatar: "https://randomuser.me/api/portraits/men/12.jpg" },
-  { name: "Tanisha Sen", college: "IIM Ranchi", company: "Times of India", package: "—", avatar: "https://randomuser.me/api/portraits/women/12.jpg" },
-  { name: "Utsav Jain", college: "NMIMS Mumbai", company: "Big 4", package: "—", avatar: "https://randomuser.me/api/portraits/men/52.jpg" },
-  { name: "Riya Agarwal", college: "IIM Indore", company: "BCG", package: "₹38 LPA", avatar: "https://randomuser.me/api/portraits/women/29.jpg" },
-  { name: "Aditya Joshi", college: "FMS Delhi", company: "McKinsey", package: "₹42 LPA", avatar: "https://randomuser.me/api/portraits/men/14.jpg" },
-  { name: "Megha Patel", college: "SPJIMR", company: "Bain", package: "₹36 LPA", avatar: "https://randomuser.me/api/portraits/women/30.jpg" },
-  { name: "Siddharth K.", college: "IIM Kozhikode", company: "Kearney", package: "₹32 LPA", avatar: "https://randomuser.me/api/portraits/men/19.jpg" },
-  { name: "Tanvi Desai", college: "XLRI", company: "P&G", package: "₹28 LPA", avatar: "https://randomuser.me/api/portraits/women/22.jpg" },
-  { name: "Arjun N.", college: "IIM Shillong", company: "Microsoft", package: "₹34 LPA", avatar: "https://randomuser.me/api/portraits/men/26.jpg" },
+  { name: "Arpita Padhi", college: "SIBM Pune", company: "", package: "—", avatar: "/images/1596641453853.avif" },
+  { name: "Gauri", college: "IIM Jammu", company: "", package: "—", avatar: "/images/1683037394349_edited.avif" },
+  { name: "Dheeraj Acharya", college: "IIM Bangalore", company: "", package: "—", avatar: "/images/1715418186294.avif" },
+  { name: "Bhaskarananda Boro", college: "IIM Bangalore", company: "", package: "—", avatar: "/images/1716187063356.avif" },
+  { name: "Priyanka", college: "IIM Trichy", company: "", package: "—", avatar: "/images/1716273677527.avif" },
+  { name: "Rohit Sattigeri", college: "XLRI Jamshedpur BM", company: "", package: "—", avatar: "/images/1718538669332.avif" },
+  { name: "Shrutika Ruia", college: "IIM Kozhikode", company: "", package: "—", avatar: "/images/1718660255500.avif" },
+  { name: "Namrata Arora", college: "IIM Lucknow", company: "", package: "—", avatar: "/images/1719018172207.avif" },
+  { name: "Vedika Daley", college: "XLRI Jamshedpur BM", company: "", package: "₹38 LPA", avatar: "/images/1720388060780.avif" },
+  { name: "Anurag Jain", college: "NMIMS Mumbai", company: "", package: "₹42 LPA", avatar: "/images/1721144724030.avif" },
+  { name: "Anik Jana", college: "SIBM Pune", company: "", package: "₹36 LPA", avatar: "/images/1722410412828.avif" },
+  { name: "Utkarsh Gupta", college: "IIM Indore", company: "", package: "₹32 LPA", avatar: "/images/1722797021578.avif" },
+  { name: "Akhil", college: "IIM Raipur", company: "", package: "₹28 LPA", avatar: "/images/1723120380988.avif" },
+  { name: "Siba Prasad", college: "IIM Kozhikode", company: "", package: "₹34 LPA", avatar: "/images/1724787513282.avif" },
 ];
 
 export const companyLogos = [

@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 export function ProgramCard({ program, compact = false }: { program: Program; compact?: boolean }) {
   return (
     <article
-      className={`group relative flex flex-col rounded-2xl border bg-card p-6 shadow-(--shadow-card) transition-all hover:-translate-y-1 hover:shadow-(--shadow-elegant) ${
+      className={`group relative flex h-full flex-col rounded-2xl border bg-card p-6 shadow-(--shadow-card) transition-all hover:-translate-y-1 hover:shadow-(--shadow-elegant) ${
         program.highlight ? "border-accent ring-2 ring-accent/30" : "border-border"
       }`}
     >
@@ -21,7 +21,9 @@ export function ProgramCard({ program, compact = false }: { program: Program; co
         <Clock className="h-3.5 w-3.5" /> {program.duration}
       </div>
 
-      {program.slug === 'live-projects' && (
+      <h3 className="mt-2 font-display text-xl font-bold text-primary">{program.name}</h3>
+      <p className="mt-1 text-sm font-medium text-accent-foreground/80">{program.tagline}</p>
+      {program.slug === "live-projects" && (
         <div className="mt-4">
           <div className="text-xs font-semibold text-muted-foreground">Domains</div>
           <div className="mt-2 flex flex-wrap gap-2">
@@ -33,9 +35,7 @@ export function ProgramCard({ program, compact = false }: { program: Program; co
           </div>
         </div>
       )}
-      <h3 className="mt-2 font-display text-xl font-bold text-primary">{program.name}</h3>
-      <p className="mt-1 text-sm font-medium text-accent-foreground/80">{program.tagline}</p>
-      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{program.shortDescription}</p>
+      <p className="mt-3 min-h-[7.5rem] text-sm leading-relaxed text-muted-foreground">{program.shortDescription}</p>
 
       {!compact && (
         <ul className="mt-4 space-y-2">
@@ -48,7 +48,7 @@ export function ProgramCard({ program, compact = false }: { program: Program; co
         </ul>
       )}
 
-      <div className="mt-5 flex items-end justify-between">
+      <div className="mt-auto flex items-end justify-between pt-5">
         <div>
           <div className="flex items-baseline gap-2">
             <span className="font-display text-2xl font-bold text-primary">{program.slug === 'placement-bootcamp' ? pricing.placementsBootcamp.price : `₹${program.price.toLocaleString('en-IN')}`}</span>
