@@ -10,6 +10,7 @@ import {
   TrendingUp,
   CheckCircle2,
 } from "lucide-react";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const steps = [
   {
@@ -88,12 +89,12 @@ export function Roadmap() {
             const StepIcon = step.icon;
             const isActive = index === active;
             return (
-              <li key={step.title}>
+              <ScrollReveal key={step.title} delay={index * 60} effect="slide-left">
                 <button
                   onClick={() => setActive(index)}
-                  className={`group flex w-full items-center gap-4 rounded-xl border p-3 text-left transition-all ${
+                  className={`group flex w-full items-center gap-4 rounded-xl border p-3 text-left transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[var(--shadow-card)] ${
                     isActive
-                      ? "border-accent bg-accent/20 shadow-[var(--shadow-elegant)]"
+                      ? "border-accent bg-accent/20 shadow-[var(--shadow-elegant)] scale-[1.01]"
                       : "border-border bg-card hover:border-primary/40 hover:bg-primary-soft/70"
                   }`}
                 >
@@ -106,12 +107,12 @@ export function Roadmap() {
                   </div>
                   <StepIcon className={`h-4 w-4 shrink-0 ${isActive ? "text-foreground" : "text-muted-foreground"}`} />
                 </button>
-              </li>
+              </ScrollReveal>
             );
           })}
         </ol>
 
-        <div className="rounded-3xl border border-border gradient-navy p-8 text-white shadow-[var(--shadow-elegant)] lg:sticky lg:top-24 lg:h-fit">
+          <div className="rounded-3xl border border-border gradient-navy p-8 text-white shadow-[var(--shadow-elegant)] lg:sticky lg:top-24 lg:h-fit animate-shimmer transition-transform duration-300 hover:-translate-y-1">
           <div className="flex items-center gap-3">
             <div className="grid h-14 w-14 place-items-center rounded-2xl bg-accent text-accent-foreground">
               <ActiveIcon className="h-6 w-6" />
@@ -126,7 +127,7 @@ export function Roadmap() {
 
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
             {current.points.map((point) => (
-              <div key={point} className="rounded-2xl border border-white/10 bg-white/10 p-4 text-sm text-white/90 backdrop-blur">
+              <div key={point} className="rounded-2xl border border-white/10 bg-white/10 p-4 text-sm text-white/90 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:bg-white/15">
                 <CheckCircle2 className="mb-2 h-4 w-4 text-accent" />
                 {point}
               </div>
@@ -135,7 +136,7 @@ export function Roadmap() {
 
           <div className="mt-6 grid grid-cols-3 gap-2">
             {steps.map((_, index) => (
-              <div key={index} className={`h-1.5 rounded-full transition-all ${index <= active ? "bg-accent" : "bg-white/15"}`} />
+              <div key={index} className={`h-1.5 rounded-full transition-all duration-300 ${index <= active ? "bg-accent shadow-[0_0_16px_rgba(248,246,131,0.55)]" : "bg-white/15"}`} />
             ))}
           </div>
 

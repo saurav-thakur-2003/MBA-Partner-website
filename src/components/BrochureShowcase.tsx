@@ -20,13 +20,13 @@ export function BrochureShowcase() {
             rel="noreferrer"
             className="group overflow-hidden rounded-[1.75rem] border border-border bg-background transition hover:-translate-y-1 hover:shadow-[var(--shadow-elegant)]"
           >
-            <div className="relative aspect-[4/5] bg-muted">
+            <div className="relative flex aspect-[4/5] items-center justify-center overflow-hidden bg-[#f6f7fb] p-4">
               <img
                 src="/brochures/sample-live-project-brochure.png"
                 alt="Sample Live Project Brochure"
-                className="h-full w-full object-cover object-center"
+                className="h-full w-full object-contain object-center"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-5 text-white">
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-5 text-white">
                 <div className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">Live Project</div>
                 <div className="mt-1 flex items-center gap-2 text-lg font-bold">
                   View brochure <ArrowUpRight className="h-4 w-4" />

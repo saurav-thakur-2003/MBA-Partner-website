@@ -36,6 +36,7 @@ import { MBAStudentToolkit } from "@/components/MBAStudentToolkit";
 import { BrochureShowcase } from "@/components/BrochureShowcase";
 import { FeaturedVideosStrip } from "@/components/FeaturedVideosStrip";
 import { programs } from "@/data/programs";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -142,7 +143,7 @@ function Home() {
           <div className="absolute right-0 top-40 h-96 w-96 rounded-full bg-primary/15 blur-3xl" />
         </div>
         <div className="container-px mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
-          <div className="animate-fade-up">
+          <div className="animate-fade-up section-entrance">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#f8f683]/70 bg-[#f8f683] px-3 py-1.5 text-xs font-extrabold text-[#111827] shadow-[0_8px_24px_-14px_rgba(248,246,131,0.9)]">
               <Star className="h-3.5 w-3.5 fill-[#111827] text-[#111827]" />
               {trust.network} Student Network · {trust.rating}
@@ -183,12 +184,12 @@ function Home() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative animate-float">
             <div className="relative overflow-hidden rounded-3xl gradient-navy p-6 shadow-(--shadow-elegant) lg:p-8">
               <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_20%_20%,rgba(255,180,0,0.7),transparent_22%),radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.12),transparent_18%),radial-gradient(circle_at_50%_80%,rgba(255,180,0,0.2),transparent_18%)]" />
               <div className="relative grid gap-6 text-white lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
                 <div className="space-y-4">
-                  <div className="inline-flex rounded-full bg-accent px-4 py-2 text-xs font-bold text-accent-foreground shadow-lg">
+                  <div className="inline-flex rounded-full bg-accent px-4 py-2 text-xs font-bold text-accent-foreground shadow-lg animate-pulse-soft">
                     NEW BATCH · Aug 2026
                   </div>
                   <div className="text-[11px] uppercase tracking-[0.35em] text-accent">Flagship Program</div>
@@ -203,14 +204,14 @@ function Home() {
 
                   <div className="grid grid-cols-3 gap-2 pt-4">
                     {[{ v: "92%", l: "Placement" }, { v: "₹38L", l: "Avg CTC" }, { v: "6 mo", l: "Mentorship" }].map((s) => (
-                      <div key={s.l} className="rounded-xl bg-white/10 p-3 text-center backdrop-blur">
+                      <div key={s.l} className="rounded-xl bg-white/10 p-3 text-center backdrop-blur transition-transform duration-300 hover:scale-105">
                         <div className="font-display text-lg font-bold text-accent">{s.v}</div>
                         <div className="text-[10px] text-white/70">{s.l}</div>
                       </div>
                     ))}
                   </div>
 
-                  <Button asChild variant="hero" className="w-full sm:w-auto">
+                  <Button asChild variant="hero" className="w-full sm:w-auto animate-pulse-soft">
                     <Link to="/programs/all-in-one-combo">
                       Enroll Now · ₹39,999 <ArrowRight className="h-4 w-4" />
                     </Link>
@@ -219,7 +220,7 @@ function Home() {
                 </div>
 
                 <div className="space-y-4 lg:pt-2">
-                  <div className="rounded-[1.75rem] border border-white/15 bg-white/10 p-4 shadow-[0_18px_60px_-20px_rgba(0,0,0,0.55)] backdrop-blur-xl">
+                  <div className="rounded-[1.75rem] border border-white/15 bg-white/10 p-4 shadow-[0_18px_60px_-20px_rgba(0,0,0,0.55)] backdrop-blur-xl transition-transform duration-300 hover:-translate-y-1 hover:scale-[1.01]">
                     <div className="flex items-center justify-between">
                       <div className="text-[10px] font-bold uppercase tracking-[0.35em] text-accent">
                         Live cohort preview
@@ -249,7 +250,7 @@ function Home() {
                     </div>
                   </div>
 
-                  <div className="rounded-[1.75rem] border border-white/15 bg-[linear-gradient(180deg,rgba(248,246,131,0.18),rgba(255,204,182,0.15),rgba(91,103,207,0.25))] p-4 shadow-[0_18px_60px_-20px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+                  <div className="rounded-[1.75rem] border border-white/15 bg-[linear-gradient(180deg,rgba(248,246,131,0.18),rgba(255,204,182,0.15),rgba(91,103,207,0.25))] p-4 shadow-[0_18px_60px_-20px_rgba(0,0,0,0.45)] backdrop-blur-xl transition-transform duration-300 hover:-translate-y-1 hover:scale-[1.01]">
                     <div className="text-[10px] font-bold uppercase tracking-[0.32em] text-accent">Offer card</div>
                     <div className="mt-2 rounded-2xl bg-background/25 p-3">
                       <div className="text-sm font-black leading-tight text-white">Fast track your career</div>
@@ -328,8 +329,10 @@ function Home() {
           </Button>
         </div>
         <div className="mt-10 grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {programs.map((p) => (
-            <ProgramCard key={p.slug} program={p} />
+          {programs.map((p, index) => (
+            <ScrollReveal key={p.slug} delay={index * 90} effect="scale">
+              <ProgramCard program={p} />
+            </ScrollReveal>
           ))}
         </div>
       </section>
@@ -340,7 +343,8 @@ function Home() {
       <SuccessStories />
       <VideoTestimonials />
       <section className="container-px mx-auto max-w-7xl py-8">
-        <div className="rounded-3xl border border-border bg-card p-6 shadow-(--shadow-card) sm:p-8">
+        <ScrollReveal effect="scale">
+          <div className="rounded-3xl border border-border bg-card p-6 shadow-(--shadow-card) sm:p-8">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
@@ -367,7 +371,8 @@ function Home() {
               </Button>
             </div>
           </div>
-        </div>
+          </div>
+        </ScrollReveal>
       </section>
       <FAQ items={homeFaqs} />
       <CTASection />

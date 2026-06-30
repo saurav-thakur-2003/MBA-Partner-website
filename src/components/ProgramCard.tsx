@@ -4,25 +4,27 @@ import type { Program } from "@/data/programs";
 import { pricing } from "@/data/content";
 import { pricing as pricingData } from "@/data/content";
 import { Button } from "@/components/ui/button";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export function ProgramCard({ program, compact = false }: { program: Program; compact?: boolean }) {
   return (
-    <article
-      className={`group relative flex h-full flex-col rounded-2xl border bg-card p-6 shadow-(--shadow-card) transition-all hover:-translate-y-1 hover:shadow-(--shadow-elegant) ${
-        program.highlight ? "border-accent ring-2 ring-accent/30" : "border-border"
-      }`}
-    >
+    <ScrollReveal className="h-full">
+      <article
+        className={`group relative flex h-full flex-col rounded-2xl border bg-card p-6 shadow-(--shadow-card) transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-(--shadow-elegant) hover:border-primary/30 ${
+          program.highlight ? "border-accent ring-2 ring-accent/30" : "border-border"
+        }`}
+      >
       {program.badge && (
         <span className="absolute -top-3 left-6 inline-flex items-center gap-1 rounded-full bg-accent px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-accent-foreground shadow">
           <Sparkles className="h-3 w-3" /> {program.badge}
         </span>
       )}
-      <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
+      <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground transition-transform duration-300 group-hover:translate-x-0.5">
         <Clock className="h-3.5 w-3.5" /> {program.duration}
       </div>
 
-      <h3 className="mt-2 font-display text-xl font-bold text-primary">{program.name}</h3>
-      <p className="mt-1 text-sm font-medium text-accent-foreground/80">{program.tagline}</p>
+      <h3 className="mt-2 font-display text-xl font-bold text-primary transition-colors duration-300 group-hover:text-[#4351d8]">{program.name}</h3>
+      <p className="mt-1 text-sm font-medium text-accent-foreground/80 transition-transform duration-300 group-hover:translate-y-0.5">{program.tagline}</p>
       {program.slug === "live-projects" && (
         <div className="mt-4">
           <div className="text-xs font-semibold text-muted-foreground">Domains</div>
@@ -61,15 +63,16 @@ export function ProgramCard({ program, compact = false }: { program: Program; co
       </div>
 
       <div className="mt-5 flex gap-2">
-        <Button asChild variant="outline" size="sm" className="flex-1">
+        <Button asChild variant="outline" size="sm" className="flex-1 transition-transform duration-300 hover:-translate-y-0.5">
           <Link to="/programs/$slug" params={{ slug: program.slug }}>Explore</Link>
         </Button>
-        <Button asChild variant="accent" size="sm" className="flex-1">
+        <Button asChild variant="accent" size="sm" className="flex-1 transition-transform duration-300 hover:-translate-y-0.5 hover:scale-[1.01]">
           <Link to="/programs/$slug" params={{ slug: program.slug }} hash="enroll">
             Enroll <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </Button>
       </div>
-    </article>
+      </article>
+    </ScrollReveal>
   );
 }

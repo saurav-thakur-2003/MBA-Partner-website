@@ -22,6 +22,7 @@ import { SuccessStories } from "@/components/SuccessStories";
 import { CTASection } from "@/components/CTASection";
 import { getProgram, programs, mentors, companyLogos } from "@/data/programs";
 import { pricing } from "@/data/content";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const Route = createFileRoute("/programs/$slug")({
   loader: ({ params }) => {
@@ -74,8 +75,9 @@ function ProgramDetail() {
 
   return (
     <div>
-      <section className="relative overflow-hidden gradient-navy pt-16 pb-16 text-white">
+      <section className="relative overflow-hidden gradient-navy pt-16 pb-16 text-white section-entrance">
         <div className="absolute -right-32 top-10 h-96 w-96 rounded-full bg-accent/20 blur-3xl" />
+        <div className="absolute left-10 top-16 h-72 w-72 rounded-full bg-white/10 blur-3xl animate-pulse-soft" />
         <div className="container-px mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="animate-fade-up">
             {program.badge && (
@@ -94,19 +96,19 @@ function ProgramDetail() {
             <p className="mt-5 max-w-2xl text-white/85">{program.shortDescription}</p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
-              <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
+              <div className="rounded-2xl border border-white/10 bg-white/10 p-4 transition-transform duration-300 hover:scale-[1.03]">
                 <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-accent">
                   <Clock3 className="h-4 w-4" /> Duration
                 </div>
                 <div className="mt-2 font-display text-2xl font-bold">{program.duration}</div>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
+              <div className="rounded-2xl border border-white/10 bg-white/10 p-4 transition-transform duration-300 hover:scale-[1.03]">
                 <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-accent">
                   <Users className="h-4 w-4" /> Mentorship
                 </div>
                 <div className="mt-2 font-display text-2xl font-bold">{program.mentorship}</div>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
+              <div className="rounded-2xl border border-white/10 bg-white/10 p-4 transition-transform duration-300 hover:scale-[1.03]">
                 <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-accent">
                   <Star className="h-4 w-4" /> Rating
                 </div>
@@ -135,7 +137,7 @@ function ProgramDetail() {
             </div>
           </div>
 
-          <div className="rounded-3xl bg-white p-6 text-foreground shadow-(--shadow-elegant)">
+          <div className="rounded-3xl bg-white p-6 text-foreground shadow-(--shadow-elegant) transition-transform duration-300 hover:-translate-y-1">
             <div id="enroll" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Pricing</div>
             <div className="mt-1 flex items-baseline gap-3">
               <span className="font-display text-4xl font-extrabold text-primary">
@@ -193,7 +195,8 @@ function ProgramDetail() {
 
       <section className="container-px mx-auto max-w-7xl py-14">
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-          <div className="rounded-4xl border border-border bg-card p-6 shadow-(--shadow-card)">
+          <ScrollReveal effect="scale">
+            <div className="rounded-4xl border border-border bg-card p-6 shadow-(--shadow-card) transition-transform duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-elegant)]">
             <div className="inline-flex rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
               Program Overview
             </div>
@@ -207,9 +210,11 @@ function ProgramDetail() {
                 </div>
               ))}
             </div>
-          </div>
+            </div>
+          </ScrollReveal>
 
-            <div className="rounded-4xl border border-border bg-card p-6 shadow-(--shadow-card)">
+            <ScrollReveal effect="scale">
+            <div className="rounded-4xl border border-border bg-card p-6 shadow-(--shadow-card) transition-transform duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-elegant)]">
             <div className="inline-flex rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
               Comparison
             </div>
@@ -226,18 +231,20 @@ function ProgramDetail() {
                 </tbody>
               </table>
             </div>
-          </div>
+            </div>
+            </ScrollReveal>
         </div>
       </section>
 
       <section className="bg-primary-soft py-16">
         <div className="container-px mx-auto max-w-7xl">
           <div className="grid gap-6 lg:grid-cols-3">
-            <div className="rounded-4xl bg-card p-6 shadow-(--shadow-card) lg:col-span-2">
+            <ScrollReveal effect="slide-left">
+            <div className="rounded-4xl bg-card p-6 shadow-(--shadow-card) transition-transform duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-elegant)] lg:col-span-2">
               <h2 className="font-display text-3xl font-bold text-primary">Who Should Join</h2>
               <div className="mt-6 grid gap-4 md:grid-cols-3">
                 {program.whoFor.map((item, index) => (
-                  <div key={item} className="rounded-2xl border border-border bg-background p-4">
+                  <div key={item} className="rounded-2xl border border-border bg-background p-4 transition-transform duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card)]">
                     <div className="grid h-10 w-10 place-items-center rounded-xl gradient-navy font-bold text-white">
                       {String(index + 1).padStart(2, "0")}
                     </div>
@@ -246,19 +253,22 @@ function ProgramDetail() {
                 ))}
               </div>
             </div>
+            </ScrollReveal>
 
-            <div className="rounded-4xl bg-card p-6 shadow-(--shadow-card)">
+            <ScrollReveal effect="slide-right">
+            <div className="rounded-4xl bg-card p-6 shadow-(--shadow-card) transition-transform duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-elegant)]">
               <h2 className="font-display text-3xl font-bold text-primary">Expected Outcomes</h2>
               <ul className="mt-5 space-y-3">
                 {program.outcomes.map((outcome) => (
-                  <li key={outcome} className="flex items-start gap-2 rounded-2xl bg-primary-soft p-3 text-sm text-foreground/85">
+                <li key={outcome} className="flex items-start gap-2 rounded-2xl bg-primary-soft p-3 text-sm text-foreground/85 transition-transform duration-300 hover:translate-x-1">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-success" />
                     <span>{outcome}</span>
                   </li>
                 ))}
               </ul>
             </div>
-          </div>
+            </ScrollReveal>
+        </div>
         </div>
       </section>
 

@@ -1,10 +1,12 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export function CTASection() {
   return (
     <section className="container-px mx-auto max-w-7xl py-20">
-      <div className="relative overflow-hidden rounded-3xl gradient-navy p-10 text-center text-white shadow-[var(--shadow-elegant)] sm:p-16">
+      <ScrollReveal effect="scale">
+        <div className="relative overflow-hidden rounded-3xl gradient-navy p-10 text-center text-white shadow-[var(--shadow-elegant)] sm:p-16">
         <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-accent/25 blur-3xl" />
         <div className="absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-accent/15 blur-3xl" />
         <div className="relative">
@@ -23,7 +25,8 @@ export function CTASection() {
             </Button>
           </div>
         </div>
-      </div>
+        </div>
+      </ScrollReveal>
     </section>
   );
 }

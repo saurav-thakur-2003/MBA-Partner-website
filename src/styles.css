@@ -152,9 +152,39 @@
   .animate-fade-up {
     animation: fade-up 0.6s ease-out both;
   }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-pulse-soft {
+    animation: pulse-soft 4s ease-in-out infinite;
+  }
+  .animate-shimmer {
+    background-size: 200% 200%;
+    animation: shimmer 7s ease infinite;
+  }
+  .section-entrance {
+    animation: section-entrance 0.9s cubic-bezier(.2,.8,.2,1) both;
+  }
   @keyframes fade-up {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes pulse-soft {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.02); opacity: 0.94; }
+  }
+  @keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  @keyframes section-entrance {
+    from { opacity: 0; transform: translateY(24px) scale(0.985); filter: blur(8px); }
+    to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
   }
   .marquee {
     animation: marquee 18s linear infinite;

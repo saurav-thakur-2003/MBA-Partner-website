@@ -1,5 +1,6 @@
 import { ArrowUpRight, PlayCircle } from "lucide-react";
 import { resources } from "@/data/content";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export function ResourcesSection() {
   return (
@@ -17,28 +18,29 @@ export function ResourcesSection() {
       </div>
 
       <div className="mt-8 grid gap-5 md:grid-cols-3">
-        {resources.map((item) => (
-          <a
-            key={item.title}
-            href={item.url}
-            target="_blank"
-            rel="noreferrer"
-            className="group rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-card)] transition hover:-translate-y-1 hover:shadow-[var(--shadow-elegant)]"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <div className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/70">{item.type}</div>
-                <h3 className="mt-2 font-display text-xl font-bold text-primary">{item.title}</h3>
+        {resources.map((item, index) => (
+          <ScrollReveal key={item.title} delay={index * 80} effect="scale">
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noreferrer"
+              className="group rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-card)] transition hover:-translate-y-1 hover:shadow-[var(--shadow-elegant)]"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <div className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/70">{item.type}</div>
+                  <h3 className="mt-2 font-display text-xl font-bold text-primary">{item.title}</h3>
+                </div>
+                <div className="grid h-11 w-11 place-items-center rounded-2xl bg-accent text-accent-foreground transition-transform duration-300 group-hover:scale-110">
+                  <PlayCircle className="h-5 w-5" />
+                </div>
               </div>
-              <div className="grid h-11 w-11 place-items-center rounded-2xl bg-accent text-accent-foreground">
-                <PlayCircle className="h-5 w-5" />
+              <p className="mt-3 text-sm text-muted-foreground">{item.description}</p>
+              <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                Watch <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </div>
-            </div>
-            <p className="mt-3 text-sm text-muted-foreground">{item.description}</p>
-            <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">
-              Watch <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-            </div>
-          </a>
+            </a>
+          </ScrollReveal>
         ))}
       </div>
     </section>

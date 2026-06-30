@@ -1,5 +1,6 @@
 import { ArrowUpRight, Video } from "lucide-react";
 import { resources } from "@/data/content";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export function FeaturedVideosStrip() {
   const featured = resources.slice(0, 3);
@@ -23,18 +24,19 @@ export function FeaturedVideosStrip() {
         </div>
 
         <div className="mt-4 grid gap-3 md:grid-cols-3">
-          {featured.map((item) => (
-            <a
-              key={item.title}
-              href={item.url}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-2xl border border-border bg-background p-4 transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-elegant)]"
-            >
-              <div className="text-[10px] font-semibold uppercase tracking-[0.3em] text-primary/60">{item.type}</div>
-              <div className="mt-2 font-semibold text-foreground">{item.title}</div>
-              <div className="mt-1 text-sm text-muted-foreground">{item.description}</div>
-            </a>
+          {featured.map((item, index) => (
+            <ScrollReveal key={item.title} delay={index * 80} effect="slide-right">
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-2xl border border-border bg-background p-4 transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-elegant)]"
+              >
+                <div className="text-[10px] font-semibold uppercase tracking-[0.3em] text-primary/60">{item.type}</div>
+                <div className="mt-2 font-semibold text-foreground">{item.title}</div>
+                <div className="mt-1 text-sm text-muted-foreground">{item.description}</div>
+              </a>
+            </ScrollReveal>
           ))}
         </div>
       </div>

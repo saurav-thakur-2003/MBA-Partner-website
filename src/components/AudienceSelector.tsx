@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { ArrowRight, Award, BookOpen, Briefcase, GraduationCap, LineChart, Trophy } from "lucide-react";
-import { Link, useNavigate } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 type Audience = "mba" | "cat";
 
@@ -31,7 +32,6 @@ const recommendations = [
 export function AudienceSelector() {
   const [audience, setAudience] = useState<Audience>("mba");
   const [selectedAnswers, setSelectedAnswers] = useState<Record<string, string>>({});
-  const navigate = useNavigate();
 
   const recommended = useMemo(() => {
     const isCat = selectedAnswers.mba_cat === "CAT / OMET Aspirant" || audience === "cat" || selectedAnswers.preparing_cat === "Yes";
@@ -45,13 +45,10 @@ export function AudienceSelector() {
   const handleAnswer = (key: string, value: string) => {
     setSelectedAnswers((current) => ({ ...current, [key]: value }));
     if (key === "mba_cat") {
-      const nextAudience = value === "CAT / OMET Aspirant" ? "cat" : "mba";
-      setAudience(nextAudience);
-      if (nextAudience === "cat") navigate({ to: "/cat" });
+      setAudience(value === "CAT / OMET Aspirant" ? "cat" : "mba");
     }
     if (key === "preparing_cat" && value === "Yes") {
       setAudience("cat");
-      navigate({ to: "/cat" });
     }
   };
 
@@ -75,20 +72,16 @@ export function AudienceSelector() {
           </div>
           <div className="inline-flex rounded-full border border-border bg-background p-1 text-sm font-semibold">
             <button
-              onClick={() => {
-                setAudience("mba");
-                navigate({ to: "/" });
-              }}
-              className={`rounded-full px-4 py-2 transition ${audience === "mba" ? "bg-primary text-white shadow" : "text-foreground/70"}`}
+              type="button"
+              onClick={() => setAudience("mba")}
+              className={`rounded-full px-4 py-2 transition-all duration-300 ${audience === "mba" ? "bg-primary text-white shadow-[var(--shadow-elegant)] scale-100" : "text-foreground/70 hover:bg-primary-soft hover:text-primary"}`}
             >
               MBA Student
             </button>
             <button
-              onClick={() => {
-                setAudience("cat");
-                navigate({ to: "/cat" });
-              }}
-              className={`rounded-full px-4 py-2 transition ${audience === "cat" ? "bg-primary text-white shadow" : "text-foreground/70"}`}
+              type="button"
+              onClick={() => setAudience("cat")}
+              className={`rounded-full px-4 py-2 transition-all duration-300 ${audience === "cat" ? "bg-primary text-white shadow-[var(--shadow-elegant)] scale-100" : "text-foreground/70 hover:bg-primary-soft hover:text-primary"}`}
             >
               CAT / OMET Aspirant
             </button>
@@ -97,32 +90,35 @@ export function AudienceSelector() {
 
         <div className="mt-6 grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="grid gap-4 md:grid-cols-2">
-            {cards.map((card) => (
-              <div key={card.name} className="group rounded-3xl border border-border bg-linear-to-br from-primary-soft to-background p-5 transition hover:-translate-y-1 hover:shadow-(--shadow-elegant)">
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <div className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/70">{audience === "mba" ? "MBA Pathway" : "CAT Track"}</div>
-                    <h3 className="mt-2 font-display text-xl font-bold text-primary">{card.name}</h3>
+            {cards.map((card, index) => (
+              <ScrollReveal key={card.name} delay={index * 90}>
+                <div className="group rounded-3xl border border-border bg-linear-to-br from-primary-soft to-background p-5 transition-all duration-300 hover:-translate-y-2 hover:shadow-(--shadow-elegant) hover:border-primary/30">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <div className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/70">{audience === "mba" ? "MBA Pathway" : "CAT Track"}</div>
+                      <h3 className="mt-2 font-display text-xl font-bold text-primary">{card.name}</h3>
+                    </div>
+                    <div className="grid h-11 w-11 place-items-center rounded-2xl bg-accent text-accent-foreground">
+                      <Award className="h-5 w-5" />
+                    </div>
                   </div>
-                  <div className="grid h-11 w-11 place-items-center rounded-2xl bg-accent text-accent-foreground">
-                    <Award className="h-5 w-5" />
-                  </div>
+                  <p className="mt-3 text-sm text-muted-foreground">{audience === "mba" ? (card as (typeof mbaPrograms)[number]).accent : (card as (typeof catTracks)[number]).note}</p>
+                  <Button asChild variant="outline" className="mt-4 w-full transition-transform duration-300 hover:-translate-y-0.5">
+                    <Link to={card.to}>
+                      Explore <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </Button>
                 </div>
-                <p className="mt-3 text-sm text-muted-foreground">{audience === "mba" ? (card as (typeof mbaPrograms)[number]).accent : (card as (typeof catTracks)[number]).note}</p>
-                <Button asChild variant="outline" className="mt-4 w-full">
-                  <Link to={card.to}>
-                    Explore <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
 
-          <div className="rounded-3xl border border-border bg-linear-to-b from-[#0d1830] to-[#142850] p-5 text-white">
+          <ScrollReveal>
+            <div className="rounded-3xl border border-border bg-linear-to-b from-[#0d1830] to-[#142850] p-5 text-white transition-transform duration-300 hover:-translate-y-1">
             <div className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Which Program Is Right For You?</div>
             <div className="mt-4 space-y-3">
               {recommendations.map((question) => (
-                <div key={question.key} className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                <div key={question.key} className="rounded-2xl border border-white/10 bg-white/5 p-3 transition-all duration-300 hover:border-white/25 hover:bg-white/10">
                   <div className="flex items-center gap-2">
                     {question.key === "mba_cat" ? <GraduationCap className="h-4 w-4 text-accent" /> : question.key === "placements" ? <Briefcase className="h-4 w-4 text-accent" /> : question.key === "case_comp" ? <Trophy className="h-4 w-4 text-accent" /> : question.key === "needs_live_projects" ? <LineChart className="h-4 w-4 text-accent" /> : <BookOpen className="h-4 w-4 text-accent" />}
                     <div className="text-sm font-semibold">{question.prompt}</div>
@@ -132,8 +128,8 @@ export function AudienceSelector() {
                       <button
                         key={answer}
                         onClick={() => handleAnswer(question.key, answer)}
-                        className={`rounded-full px-3 py-1.5 text-xs font-semibold transition ${
-                          selectedAnswers[question.key] === answer ? "bg-accent text-accent-foreground" : "bg-white/10 text-white/80 hover:bg-white/15"
+                        className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-all duration-300 ${
+                          selectedAnswers[question.key] === answer ? "bg-accent text-accent-foreground shadow-[0_10px_30px_-12px_rgba(248,246,131,0.95)] scale-105" : "bg-white/10 text-white/80 hover:bg-white/15 hover:scale-105"
                         }`}
                       >
                         {answer}
@@ -144,7 +140,7 @@ export function AudienceSelector() {
               ))}
             </div>
 
-            <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-4">
+            <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-4 transition-all duration-300 hover:border-white/25 hover:bg-white/10">
               <div className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Recommended for you</div>
               <div className="mt-2 flex flex-wrap gap-2">
                 {recommended.map((item) => (
@@ -154,7 +150,8 @@ export function AudienceSelector() {
                 ))}
               </div>
             </div>
-          </div>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

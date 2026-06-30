@@ -1,5 +1,6 @@
 import { mentors } from "@/data/programs";
 import { Building2, GraduationCap } from "lucide-react";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const colors = ["#142850", "#1e3a6e", "#2a4d8f", "#3a5fa5"];
 
@@ -25,17 +26,19 @@ export function MentorShowcase() {
           const initials = m.name.split(" ").map((p) => p[0]).slice(0, 2).join("");
           const bg = colors[i % colors.length];
           return (
-            <div key={m.name} className="group rounded-2xl border border-border bg-card p-4 transition-all hover:-translate-y-1 hover:border-accent/50 hover:shadow-[var(--shadow-card)]">
-              <div className="grid h-16 w-16 place-items-center rounded-2xl text-xl font-bold text-white" style={{ background: bg }}>
-                {initials}
+            <ScrollReveal key={m.name} delay={i * 60}>
+              <div className="group rounded-2xl border border-border bg-card p-4 transition-all hover:-translate-y-1 hover:border-accent/50 hover:shadow-[var(--shadow-card)]">
+                <div className="grid h-16 w-16 place-items-center rounded-2xl text-xl font-bold text-white" style={{ background: bg }}>
+                  {initials}
+                </div>
+                <h3 className="mt-3 font-display text-base font-bold text-primary">{m.name}</h3>
+                <p className="text-xs font-medium text-accent-foreground/80">{m.role}</p>
+                <div className="mt-2 space-y-1 border-t border-border pt-2 text-xs text-muted-foreground">
+                  <div className="flex items-center gap-1.5"><GraduationCap className="h-3.5 w-3.5 text-primary" />{m.college}</div>
+                  <div className="flex items-center gap-1.5"><Building2 className="h-3.5 w-3.5 text-primary" />{m.company}</div>
+                </div>
               </div>
-              <h3 className="mt-3 font-display text-base font-bold text-primary">{m.name}</h3>
-              <p className="text-xs font-medium text-accent-foreground/80">{m.role}</p>
-              <div className="mt-2 space-y-1 border-t border-border pt-2 text-xs text-muted-foreground">
-                <div className="flex items-center gap-1.5"><GraduationCap className="h-3.5 w-3.5 text-primary" />{m.college}</div>
-                <div className="flex items-center gap-1.5"><Building2 className="h-3.5 w-3.5 text-primary" />{m.company}</div>
-              </div>
-            </div>
+            </ScrollReveal>
           );
         })}
       </div>
